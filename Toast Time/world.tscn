@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ddf2lmweuwi16" path="res://tile_map_layer.tscn" id="1_e65tn"]
 [ext_resource type="Script" path="res://world.gd" id="1_myu7f"]
 [ext_resource type="PackedScene" uid="uid://vmhp12kclfor" path="res://parallax_background.tscn" id="1_wee38"]
-[ext_resource type="PackedScene" uid="uid://sjqhcj5s37fx" path="res://player/player.tscn" id="3_f1k2n"]
+[ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://Finn/finn.tscn" id="4_yvcp4"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_myu7f")
@@ -12,4 +12,5 @@ script = ExtResource("1_myu7f")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_wee38")]
 
-[node name="Player" parent="." instance=ExtResource("3_f1k2n")]
+[node name="Finn" parent="." instance=ExtResource("4_yvcp4")]
+position = Vector2(155, 182)

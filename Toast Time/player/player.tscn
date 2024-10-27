@@ -10,7 +10,8 @@
 [ext_resource type="Script" path="res://player/attack_state.gd" id="8_imsyg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxclw"]
-height = 50.0
+radius = 5.0
+height = 28.0
 
 [sub_resource type="Animation" id="Animation_fyt1t"]
 length = 0.001

@@ -1,5 +1,4 @@
-extends CharacterBody2D
-
+extends GenericCharacter
 class_name Player
 
 @export var GRAVITY = 10
@@ -10,11 +9,8 @@ class_name Player
 const ACCEL = 75.0
 
 var facing_right : bool = true
-var dir : float = 0.0
-var motion = Vector2()
 
 var current_sprite : Sprite2D
-var anim_player : AnimationPlayer 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +28,3 @@ func _physics_process(delta: float) -> void:
 		motion.y = MAXFALLSPEED
 	velocity = motion
 	move_and_slide()
-	
-func get_animation_player () -> AnimationPlayer:
-	return anim_player

@@ -23,7 +23,7 @@ func update(delta : float) -> void:
 		player.facing_right = true
 	elif dir < 0:
 		player.facing_right = false
-	player.motion.x = ACCEL * dir
+	player.motion.x = player.accel * dir
 	
 	if player.is_on_floor() :
 		Transitioned.emit(self, "idle")

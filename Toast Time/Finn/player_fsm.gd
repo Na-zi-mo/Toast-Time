@@ -8,6 +8,8 @@ class_name Player
 
 const ACCEL = 75.0
 
+var accel = ACCEL
+
 var facing_right : bool = true
 
 var current_sprite : Sprite2D

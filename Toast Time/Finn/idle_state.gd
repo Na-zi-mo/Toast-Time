@@ -23,7 +23,9 @@ func update(delta: float) -> void:
 	if not anim_player :
 		anim_player = player.get_animation_player()
 	
-	if dir != 0:
+	if dir != 0 and Input.is_action_pressed("flag_run"):
+		Transitioned.emit(self, "run")
+	elif dir != 0:
 		Transitioned.emit(self, "walk")
 	elif Input.is_action_just_pressed("ui_accept"):
 		Transitioned.emit(self, "jump")

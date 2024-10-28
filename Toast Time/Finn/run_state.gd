@@ -1,18 +1,18 @@
 extends BaseState
-class_name PlayerWalk
+class_name PlayerRun
 
 @export var player : Player
 var anim_player : AnimationPlayer 
 
 
-@export var ACCEL_WALK = 30.0
+@export var ACCEL_RUN = 75.0
+
+func enter():
+	player.accel = ACCEL_RUN
 
 func manage_input() -> int:	
 	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")	
 	return dir
-
-func enter():
-	player.accel = ACCEL_WALK
 
 func update(delta : float) -> void:
 	if not anim_player :
@@ -22,9 +22,9 @@ func update(delta : float) -> void:
 	
 	player.motion.x = player.accel * dir
 	
-	if dir != 0 and Input.is_action_just_pressed("flag_run"):
-		Transitioned.emit(self, "run")
-	
+	if dir != 0 and !Input.is_action_pressed("flag_run"):
+		Transitioned.emit(self, "walk")
+		
 	if dir > 0:
 		player.facing_right = true
 	elif dir < 0:
@@ -34,6 +34,7 @@ func update(delta : float) -> void:
 		
 	if not player.is_on_floor() and player.velocity.y > 0 :
 		Transitioned.emit(self, "fall")
+		
 	if player.is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		Transitioned.emit(self, "jump")
 	elif player.is_on_floor() and Input.is_action_just_pressed("attack"):
@@ -45,4 +46,4 @@ func physics_update(delta: float) -> void:
 		return
 	
 	if (player.velocity.length() > 0) :
-		anim_player.play("walk")
+		anim_player.play("run")

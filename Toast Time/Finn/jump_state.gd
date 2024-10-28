@@ -27,7 +27,7 @@ func update(delta : float) -> void:
 		player.facing_right = true
 	elif dir < 0:
 		player.facing_right = false
-	player.motion.x = ACCEL * dir
+	player.motion.x = player.accel * dir
 	
 	if player.velocity.y >= 0 :
 		Transitioned.emit(self, "fall")

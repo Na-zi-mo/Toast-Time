@@ -5,7 +5,7 @@ class_name PlayerFall
 var anim_player : AnimationPlayer 
 
 
-@export var ACCEL = 75.0
+@export var ACCEL = 30.0
 	
 func enter():
 	anim_player = player.get_animation_player()

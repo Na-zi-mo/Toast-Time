@@ -5,7 +5,7 @@ class_name PlayerWalk
 var anim_player : AnimationPlayer 
 
 
-@export var ACCEL = 75.0
+@export var ACCEL = 30.0
 
 func manage_input() -> int:	
 	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")	

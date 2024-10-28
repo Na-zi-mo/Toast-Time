@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8u8vtw01twur"
-path="res://.godot/imported/final_spritesheet.png-b062f068b8c210d1df32349c934c72e2.ctex"
+uid="uid://b5sfhldtc1ug1"
+path="res://.godot/imported/finn_jake_spritesheet.png-ee8312f4928f74402169da28af6354a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Finn/final_spritesheet.png"
-dest_files=["res://.godot/imported/final_spritesheet.png-b062f068b8c210d1df32349c934c72e2.ctex"]
+source_file="res://Finn/finn_jake_spritesheet.png"
+dest_files=["res://.godot/imported/finn_jake_spritesheet.png-ee8312f4928f74402169da28af6354a3.ctex"]
 
 [params]
 

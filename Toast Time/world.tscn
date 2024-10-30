@@ -9,6 +9,7 @@
 script = ExtResource("1_myu7f")
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_e65tn")]
+position = Vector2(-1, 19)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_wee38")]
 

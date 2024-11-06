@@ -50,3 +50,6 @@ func physics_update(delta: float) -> void:
 	
 	if (player.velocity.length() > 0) :
 		anim_player.play("run")
+
+func exit():
+	anim_player.stop()

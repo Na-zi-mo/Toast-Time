@@ -23,7 +23,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
 	
-		
 	if (velocity.x > 0):
 		current_sprite.flip_h = false
 	elif (velocity.x < 0):

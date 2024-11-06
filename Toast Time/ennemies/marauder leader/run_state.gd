@@ -53,7 +53,7 @@ func update(delta: float) -> void:
 	
 	handle_player()
 	
-	character.velocity = character.direction * MAX_VELOCITY
+	character.velocity.x = character.direction.x * MAX_VELOCITY
 	character.move_and_slide()
 	
 	if not floor_detector.is_colliding():

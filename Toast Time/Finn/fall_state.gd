@@ -26,9 +26,11 @@ func update(delta : float) -> void:
 	player.motion.x = player.accel * dir
 	
 	if player.is_on_floor() :
-		anim_player.stop()
 		Transitioned.emit(self, "idle")
 	
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor() :
 		anim_player.play("fall")
+
+func exit():
+	anim_player.stop()

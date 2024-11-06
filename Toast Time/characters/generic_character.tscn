@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctj6dx5ah5brh"]
+
+[ext_resource type="Script" path="res://characters/generic_character.gd" id="1_a4vj3"]
+[ext_resource type="Script" path="res://state_machine.gd" id="1_v3cdn"]
+
+[node name="GenericCharacter" type="CharacterBody2D"]
+script = ExtResource("1_a4vj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_v3cdn")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Walk" type="Node" parent="StateMachine"]
+
+[node name="Jump" type="Node" parent="StateMachine"]

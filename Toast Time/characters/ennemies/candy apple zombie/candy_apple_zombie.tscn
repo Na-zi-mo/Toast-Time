@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://dw7i2pd8so2by"]
 
-[ext_resource type="Script" path="res://ennemies/candy apple zombie/candy_apple_zombie.gd" id="1_lscax"]
-[ext_resource type="Texture2D" uid="uid://b0gatk0hnkftq" path="res://ennemies/candy apple zombie/candy_apple_zombie.png" id="2_4xjqu"]
+[ext_resource type="Script" path="res://characters/ennemies/candy apple zombie/candy_apple_zombie.gd" id="1_lscax"]
+[ext_resource type="Texture2D" uid="uid://b0gatk0hnkftq" path="res://characters/ennemies/candy apple zombie/candy_apple_zombie.png" id="2_4xjqu"]
 [ext_resource type="Script" path="res://state_machine.gd" id="3_ri5cd"]
-[ext_resource type="Script" path="res://ennemies/candy apple zombie/idle_state.gd" id="4_fxdqt"]
-[ext_resource type="Script" path="res://ennemies/candy apple zombie/walk_state.gd" id="5_3hb1u"]
+[ext_resource type="Script" path="res://characters/ennemies/candy apple zombie/idle_state.gd" id="4_fxdqt"]
+[ext_resource type="Script" path="res://characters/ennemies/candy apple zombie/walk_state.gd" id="5_3hb1u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jty0y"]
 radius = 17.0

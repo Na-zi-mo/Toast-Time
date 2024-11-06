@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds72gpxc80otj"
-path="res://.godot/imported/marauder_leader.png-5fd6f4a3d5083c55bbc4561672ad5411.ctex"
+path="res://.godot/imported/marauder_leader.png-9fe3a90ec128da10004d1e8579b77eb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ennemies/marauder leader/marauder_leader.png"
-dest_files=["res://.godot/imported/marauder_leader.png-5fd6f4a3d5083c55bbc4561672ad5411.ctex"]
+source_file="res://characters/ennemies/marauder leader/marauder_leader.png"
+dest_files=["res://.godot/imported/marauder_leader.png-9fe3a90ec128da10004d1e8579b77eb3.ctex"]
 
 [params]
 

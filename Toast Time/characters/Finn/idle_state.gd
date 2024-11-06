@@ -6,7 +6,6 @@ var anim_player : AnimationPlayer
 
 func manage_input() -> int:	
 	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left");
-
 	return dir
 
 func enter():

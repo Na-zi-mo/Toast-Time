@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0gatk0hnkftq"
-path="res://.godot/imported/candy_apple_zombie.png-019493001dad595177da8d752344d8d3.ctex"
+uid="uid://b5sfhldtc1ug1"
+path="res://.godot/imported/finn_jake_spritesheet.png-bdae152b6f4fa3191e8db37b536ee82a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ennemies/candy apple zombie/candy_apple_zombie.png"
-dest_files=["res://.godot/imported/candy_apple_zombie.png-019493001dad595177da8d752344d8d3.ctex"]
+source_file="res://characters/Finn/finn_jake_spritesheet.png"
+dest_files=["res://.godot/imported/finn_jake_spritesheet.png-bdae152b6f4fa3191e8db37b536ee82a.ctex"]
 
 [params]
 

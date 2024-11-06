@@ -17,7 +17,7 @@ func enter():
 func update(delta : float) -> void:
 	if not anim_player :
 		anim_player = player.get_animation_player()
-
+	
 	var dir := manage_input()
 	
 	if player.hit_flag:
@@ -34,13 +34,6 @@ func update(delta : float) -> void:
 		player.facing_right = false
 	else:
 		Transitioned.emit(self, "idle")
-		
-	if not player.is_on_floor() and player.velocity.y > 0 :
-		Transitioned.emit(self, "fall")
-	if player.is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		Transitioned.emit(self, "jump")
-	elif player.is_on_floor() and Input.is_action_just_pressed("attack"):
-		Transitioned.emit(self, "attack")
 
 func physics_update(delta: float) -> void:
 	var dir := manage_input()
@@ -49,6 +42,12 @@ func physics_update(delta: float) -> void:
 	
 	if (player.velocity.length() > 0) :
 		anim_player.play("walk")
+	if not player.is_on_floor() and player.velocity.y > 0 :
+		Transitioned.emit(self, "fall")
+	if player.is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+		Transitioned.emit(self, "jump")
+	elif player.is_on_floor() and Input.is_action_just_pressed("attack"):
+		Transitioned.emit(self, "attack")
 		
 func exit():
 	anim_player.stop()

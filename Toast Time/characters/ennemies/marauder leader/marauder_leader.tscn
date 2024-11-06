@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://da1di15hru4tu"]
 
-[ext_resource type="Texture2D" uid="uid://ds72gpxc80otj" path="res://ennemies/marauder leader/marauder_leader.png" id="1_euqvv"]
-[ext_resource type="Script" path="res://ennemies/marauder leader/marauder_leader.gd" id="1_tla81"]
+[ext_resource type="Texture2D" uid="uid://ds72gpxc80otj" path="res://characters/ennemies/marauder leader/marauder_leader.png" id="1_euqvv"]
+[ext_resource type="Script" path="res://characters/ennemies/marauder leader/marauder_leader.gd" id="1_tla81"]
 [ext_resource type="Script" path="res://state_machine.gd" id="2_fohdx"]
-[ext_resource type="Script" path="res://ennemies/marauder leader/idle_state.gd" id="3_1r3v1"]
-[ext_resource type="Script" path="res://ennemies/marauder leader/run_state.gd" id="5_mx12k"]
-[ext_resource type="Script" path="res://ennemies/marauder leader/charge_state.gd" id="6_uu4b0"]
+[ext_resource type="Script" path="res://characters/ennemies/marauder leader/idle_state.gd" id="3_1r3v1"]
+[ext_resource type="Script" path="res://characters/ennemies/marauder leader/run_state.gd" id="5_mx12k"]
+[ext_resource type="Script" path="res://characters/ennemies/marauder leader/charge_state.gd" id="6_uu4b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsbfc"]
 size = Vector2(58, 81)

@@ -1,14 +1,7 @@
 class_name MarauderLeader
 extends GenericCharacter
 
-
 @export var GRAVITY = 10
-
-#const ACCEL = 75.0
-#
-#var accel = ACCEL
-#
-#var facing_right : bool = true
 
 var current_sprite : Sprite2D
 

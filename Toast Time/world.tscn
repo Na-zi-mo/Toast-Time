@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://byl786d032n78"]
+[gd_scene load_steps=6 format=3 uid="uid://byl786d032n78"]
 
 [ext_resource type="PackedScene" uid="uid://ddf2lmweuwi16" path="res://tile_map_layer.tscn" id="1_e65tn"]
 [ext_resource type="Script" path="res://world.gd" id="1_myu7f"]
 [ext_resource type="PackedScene" uid="uid://vmhp12kclfor" path="res://parallax_background.tscn" id="1_wee38"]
 [ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://Finn/finn.tscn" id="4_yvcp4"]
+[ext_resource type="PackedScene" uid="uid://dw7i2pd8so2by" path="res://ennemies/candy apple zombie/candy_apple_zombie.tscn" id="5_r68aa"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_myu7f")
@@ -15,4 +16,8 @@ scale = Vector2(0.5, 0.5)
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_wee38")]
 
 [node name="Finn" parent="." instance=ExtResource("4_yvcp4")]
-position = Vector2(155, 182)
+position = Vector2(1134, 168)
+
+[node name="Candy Apple Zombie" parent="." instance=ExtResource("5_r68aa")]
+position = Vector2(1450, 225)
+scale = Vector2(0.5, 0.5)

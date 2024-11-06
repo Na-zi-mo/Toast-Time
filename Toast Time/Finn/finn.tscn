@@ -881,6 +881,8 @@ _data = {
 
 [node name="Finn" type="CharacterBody2D"]
 position = Vector2(121, 335)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_7qguk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

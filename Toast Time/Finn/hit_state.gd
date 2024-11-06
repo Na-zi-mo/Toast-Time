@@ -1,14 +1,14 @@
 extends BaseState
-class_name PlayerFall
+class_name PlayerHit
 
 @export var player : Player
 var anim_player : AnimationPlayer 
 
-
-@export var ACCEL = 30.0
 	
 func enter():
 	anim_player = player.get_animation_player()
+	player.motion.y = -player.JUMPFORCE * 0.7
+	anim_player.play("knock_down")
 
 func manage_input() -> int:	
 	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")	
@@ -23,12 +23,16 @@ func update(delta : float) -> void:
 		player.facing_right = true
 	elif dir < 0:
 		player.facing_right = false
-	player.motion.x = player.accel * dir
 	
-	if player.is_on_floor() :
-		anim_player.stop()
-		Transitioned.emit(self, "idle")
+	
 	
 func physics_update(delta: float) -> void:
-	if not player.is_on_floor() :
-		anim_player.play("fall")
+	if player.hit_flag :
+		player.apply_force(player.hit_velocity)
+		player.hit_flag = false
+	
+	if not player.is_on_floor():
+		player.motion.y += player.GRAVITY * delta
+	
+	if player.is_on_floor() :
+		Transitioned.emit(self, "idle")

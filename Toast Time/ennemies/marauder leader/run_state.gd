@@ -1,10 +1,10 @@
-class_name WalkState
+class_name RunState
 extends BaseState
 
 @export var character : GenericCharacter
 
 var player
-var MAX_VELOCITY = 20;
+var MAX_VELOCITY = 35;
 var floor_detector : RayCast2D
 var player_detector : RayCast2D
 var new_velocity : bool = false
@@ -29,16 +29,17 @@ func handle_player():
 		
 		if collider == player:
 			# "Player detected!
-			Transitioned.emit(self, "attack")
+			print('player detected!!!')
+			Transitioned.emit(self, "charge")
 			return
 
 func enter() -> void:
-	character.get_animation_player().play("walk")
+	character.get_animation_player().play("run")
 	player = get_player()
 	floor_detector = character.get_node("FloorDetector") as RayCast2D
 	player_detector = character.get_node("PlayerDetector") as RayCast2D
 	randomize_walk_time()
-	#print("Golem : Walk")
+	print("Marauder : Run")
 
 func update(delta: float) -> void:
 	if not player:

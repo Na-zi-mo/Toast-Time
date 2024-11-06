@@ -31,7 +31,12 @@ func update(delta: float) -> void:
 		Transitioned.emit(self, "jump")
 	elif Input.is_action_just_pressed("attack"):
 		Transitioned.emit(self, "attack")
+		
+	if player.hit_flag:
+		Transitioned.emit(self, "hit");
+		
 	
 func physics_update(delta: float) -> void:
 	if not anim_player : return
-	anim_player.play("idle")
+	if !anim_player.is_playing():
+		anim_player.play("idle")

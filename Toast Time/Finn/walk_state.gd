@@ -20,6 +20,9 @@ func update(delta : float) -> void:
 
 	var dir := manage_input()
 	
+	if player.hit_flag:
+		Transitioned.emit(self, "hit");
+	
 	player.motion.x = player.accel * dir
 	
 	if dir != 0 and Input.is_action_just_pressed("flag_run"):

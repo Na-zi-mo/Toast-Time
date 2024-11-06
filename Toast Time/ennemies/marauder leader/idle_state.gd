@@ -1,4 +1,4 @@
-class_name IdleState_Zombie
+class_name IdleState
 extends BaseState
 
 @export var character : GenericCharacter
@@ -18,7 +18,7 @@ func enter() -> void:
 	player = get_player()
 	idle_time = randf_range(1, 3)
 	next_dir = randi_range(0, 1) == 1
-	#print("Golem : Idle")
+	print("Marauder : Idle")
 
 func update(delta : float) -> void :
 	if (player == null) :
@@ -28,7 +28,7 @@ func update(delta : float) -> void :
 	if idle_time > 0 :
 		idle_time -= delta
 	else :
-		Transitioned.emit(self, "walk")
+		Transitioned.emit(self, "run")
 		return
 	
 	character.velocity.x = 0

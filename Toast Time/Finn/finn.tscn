@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cfu8rj8dlv623"]
+[gd_scene load_steps=42 format=3 uid="uid://cfu8rj8dlv623"]
 
 [ext_resource type="Script" path="res://Finn/player_fsm.gd" id="1_7qguk"]
 [ext_resource type="Texture2D" uid="uid://b5sfhldtc1ug1" path="res://Finn/finn_jake_spritesheet.png" id="2_aq2f0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Finn/fall_state.gd" id="7_hq3jd"]
 [ext_resource type="Script" path="res://Finn/attack_state.gd" id="8_wrbsm"]
 [ext_resource type="Script" path="res://Finn/run_state.gd" id="9_bisg8"]
+[ext_resource type="Script" path="res://Finn/hit_state.gd" id="10_p2n0m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxclw"]
 radius = 5.0
@@ -644,7 +645,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_84omd"]
 resource_name = "knock_down"
-length = 3.5
+length = 2.0
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -665,7 +666,7 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 3.3),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.8, 1, 1.15, 1.35, 1.5, 1.7, 1.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349]
@@ -879,7 +880,7 @@ _data = {
 "walk": SubResource("Animation_tbg3w")
 }
 
-[node name="Finn" type="CharacterBody2D"]
+[node name="Finn" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(121, 335)
 collision_layer = 3
 collision_mask = 3
@@ -932,4 +933,8 @@ player = NodePath("../..")
 
 [node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
 script = ExtResource("9_bisg8")
+player = NodePath("../..")
+
+[node name="Hit" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("10_p2n0m")
 player = NodePath("../..")

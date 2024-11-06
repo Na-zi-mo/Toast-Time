@@ -1,4 +1,4 @@
-class_name CandyAppleZombie
+class_name MarauderLeader
 extends GenericCharacter
 
 

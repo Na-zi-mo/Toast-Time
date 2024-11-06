@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://da1di15hru4tu"]
+
+[ext_resource type="Texture2D" uid="uid://ds72gpxc80otj" path="res://ennemies/marauder leader/marauder_leader.png" id="1_euqvv"]
+[ext_resource type="Script" path="res://ennemies/marauder leader/marauder_leader.gd" id="1_tla81"]
+[ext_resource type="Script" path="res://state_machine.gd" id="2_fohdx"]
+[ext_resource type="Script" path="res://ennemies/marauder leader/idle_state.gd" id="3_1r3v1"]
+[ext_resource type="Script" path="res://ennemies/marauder leader/run_state.gd" id="5_mx12k"]
+[ext_resource type="Script" path="res://ennemies/marauder leader/charge_state.gd" id="6_uu4b0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsbfc"]
+size = Vector2(56.5, 83)
+
+[sub_resource type="Animation" id="Animation_sjspa"]
+resource_name = "idle"
+length = 1.625
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 12]
+}
+
+[sub_resource type="Animation" id="Animation_6mih5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bfru4"]
+resource_name = "run"
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [26, 31]
+}
+
+[sub_resource type="Animation" id="Animation_qrl86"]
+resource_name = "attack"
+length = 0.6
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [52, 57]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4io3f"]
+_data = {
+"RESET": SubResource("Animation_6mih5"),
+"attack": SubResource("Animation_qrl86"),
+"idle": SubResource("Animation_sjspa"),
+"run": SubResource("Animation_bfru4")
+}
+
+[node name="Marauder Leader" type="CharacterBody2D"]
+script = ExtResource("1_tla81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.75, 0.5)
+shape = SubResource("RectangleShape2D_gsbfc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_euqvv")
+hframes = 13
+vframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4io3f")
+}
+
+[node name="FloorDetector" type="RayCast2D" parent="."]
+position = Vector2(0, -13)
+target_position = Vector2(52, 63)
+
+[node name="PlayerDetector" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+target_position = Vector2(100, 0)
+collide_with_areas = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_fohdx")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
+script = ExtResource("3_1r3v1")
+character = NodePath("../..")
+
+[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
+script = ExtResource("5_mx12k")
+character = NodePath("../..")
+
+[node name="Charge" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
+script = ExtResource("6_uu4b0")
+character = NodePath("../..")

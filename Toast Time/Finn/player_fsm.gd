@@ -14,11 +14,18 @@ var facing_right : bool = true
 
 var current_sprite : Sprite2D
 
+var hit_flag : bool = false
+
+var hit_velocity: Vector2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim_player = $AnimationPlayer
 	current_sprite = $Sprite2D
 	anim_player.play("idle")
+
+func apply_force(force : Vector2):
+	motion += force
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:
@@ -30,3 +37,7 @@ func _physics_process(delta: float) -> void:
 		motion.y = MAXFALLSPEED
 	velocity = motion
 	move_and_slide()
+
+func has_been_hit(velocity: Vector2):
+	hit_velocity = velocity
+	hit_flag = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw7i2pd8so2by"]
+[gd_scene load_steps=11 format=3 uid="uid://dw7i2pd8so2by"]
 
 [ext_resource type="Script" path="res://generic_character.gd" id="1_djukd"]
 [ext_resource type="Texture2D" uid="uid://b0gatk0hnkftq" path="res://ennemies/candy apple zombie/candy_apple_zombie.png" id="2_4xjqu"]
+[ext_resource type="Script" path="res://state_machine.gd" id="3_ri5cd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jty0y"]
 radius = 17.0
@@ -118,5 +119,19 @@ libraries = {
 }
 
 [node name="FloorDetector" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(33, 47)
 
 [node name="PlayerDetector" type="RayCast2D" parent="."]
+target_position = Vector2(47, 0)
+collide_with_areas = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_ri5cd")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Walk" type="Node" parent="StateMachine"]
+
+[node name="Attack" type="Node" parent="StateMachine"]

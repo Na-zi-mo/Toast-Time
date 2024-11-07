@@ -6,6 +6,13 @@ class_name Player
 @export var MAXSPEED = 200
 @export var JUMPFORCE = 350
 
+signal PlayerHit(value : int, max_value : int)
+var life_timer : Timer = Timer.new()
+var hp : int = 100
+var max_hp : int = 100
+var hp_increment : int = 2
+
+
 const ACCEL = 75.0
 var accel = ACCEL
 var facing_right : bool = true
@@ -17,6 +24,19 @@ func _ready() -> void:
 	anim_player = $AnimationPlayer
 	sprite = $Sprite2D
 	anim_player.play("idle")
+	add_child(life_timer)
+	life_timer.wait_time = 1.0
+	life_timer.autostart = true
+	life_timer.timeout.connect(_on_life_timer_timeout)
+	life_timer.start()
+func _on_life_timer_timeout() -> void :
+	
+	if (hp <= 0 || hp >= max_hp):
+		hp_increment = -hp_increment
+	
+	hp += hp_increment
+			
+	PlayerHit.emit(hp, max_hp)
 
 func apply_force(force : Vector2):
 	motion += force

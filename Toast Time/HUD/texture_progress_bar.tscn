@@ -12,10 +12,3 @@ texture_under = ExtResource("1_xckda")
 texture_progress = ExtResource("2_36vsk")
 texture_progress_offset = Vector2(503, 188)
 script = ExtResource("3_70hsu")
-
-[node name="BarText" type="Label" parent="."]
-layout_mode = 0
-offset_left = 762.0
-offset_top = 185.0
-offset_right = 802.0
-offset_bottom = 208.0

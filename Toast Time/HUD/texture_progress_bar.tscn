@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ekwe5eahfn3a"]
+
+[ext_resource type="Texture2D" uid="uid://ccbihfd7dce8n" path="res://HUD/progress_bar_under.png" id="1_xckda"]
+[ext_resource type="Texture2D" uid="uid://6arkowl7npx2" path="res://HUD/progress_bar.png" id="2_36vsk"]
+[ext_resource type="Script" path="res://HUD/texture_progress_bar.gd" id="3_70hsu"]
+
+[node name="TextureProgressBar" type="TextureProgressBar"]
+offset_right = 1190.0
+offset_bottom = 396.0
+value = 100.0
+texture_under = ExtResource("1_xckda")
+texture_progress = ExtResource("2_36vsk")
+texture_progress_offset = Vector2(503, 188)
+script = ExtResource("3_70hsu")
+
+[node name="BarText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 185.0
+offset_right = 802.0
+offset_bottom = 208.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctj6dx5ah5brh"]
+[gd_scene load_steps=4 format=3 uid="uid://ctj6dx5ah5brh"]
 
 [ext_resource type="Script" path="res://characters/generic_character.gd" id="1_a4vj3"]
 [ext_resource type="Script" path="res://state_machine.gd" id="1_v3cdn"]
+[ext_resource type="Script" path="res://characters/health.gd" id="3_nr3ca"]
 
 [node name="GenericCharacter" type="CharacterBody2D"]
 script = ExtResource("1_a4vj3")
@@ -21,3 +22,6 @@ initial_state = NodePath("Idle")
 [node name="Walk" type="Node" parent="StateMachine"]
 
 [node name="Jump" type="Node" parent="StateMachine"]
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_nr3ca")

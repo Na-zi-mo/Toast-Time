@@ -22,8 +22,12 @@ var hit_velocity: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim_player = $AnimationPlayer
-	sprite = $Sprite2D
+	sprite = $Sprite2D	
 	anim_player.play("idle")
+	
+	
+	
+	
 	add_child(life_timer)
 	life_timer.wait_time = 1.0
 	life_timer.autostart = true

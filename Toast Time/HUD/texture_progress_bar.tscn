@@ -7,7 +7,7 @@
 [node name="TextureProgressBar" type="TextureProgressBar"]
 offset_right = 1190.0
 offset_bottom = 396.0
-value = 100.0
+value = 50.0
 texture_under = ExtResource("1_xckda")
 texture_progress = ExtResource("2_36vsk")
 texture_progress_offset = Vector2(503, 188)

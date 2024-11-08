@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 	velocity = motion
 	move_and_slide()
 
-func has_been_hit(velocity: Vector2):
+func has_been_hit(velocity: Vector2, damage: int):
 	hit_velocity = velocity
 	hit_flag = true
+	take_damage(damage)

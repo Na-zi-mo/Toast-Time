@@ -22,7 +22,8 @@ func enter() -> void:
 func handle_collision(collision : KinematicCollision2D) -> void:
 	if collision.get_collider() == player :
 		if (player.has_method("has_been_hit")):
-			player.call("has_been_hit", Vector2(character.velocity.x / 4, 0))
+			player.call("has_been_hit", Vector2(character.velocity.x / 4, 0), character.damage)
+			Transitioned.emit(self, "idle")
 
 func update(delta : float) -> void:
 	if not player:

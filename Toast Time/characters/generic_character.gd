@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name GenericCharacter
 
 @onready var HealthClass = preload("res://characters/health.gd")
+@export var damage : int = 10
 var health_component : Health
 
 var anim_player : AnimationPlayer

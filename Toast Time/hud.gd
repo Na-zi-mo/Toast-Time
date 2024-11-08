@@ -7,9 +7,9 @@ var health_bar : GenericProgressBar
 func _ready() -> void:
 	player = get_parent().get_node("Finn") as Player
 	health_bar = $HPProgressBar
-	player.PlayerHit.connect(update_health)
+	player.health_component.connect("health_changed", update_health)
 	
-	update_health(100, 100)
+	update_health(player.health_component.health, player.health_component.max_health)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

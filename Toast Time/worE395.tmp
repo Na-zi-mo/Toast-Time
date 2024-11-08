@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://byl786d032n78"]
+
+[ext_resource type="PackedScene" uid="uid://ddf2lmweuwi16" path="res://tile_map_layer.tscn" id="1_e65tn"]
+[ext_resource type="Script" path="res://world.gd" id="1_myu7f"]
+[ext_resource type="PackedScene" uid="uid://vmhp12kclfor" path="res://parallax_background.tscn" id="1_wee38"]
+[ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://characters/Finn/finn.tscn" id="4_yvcp4"]
+[ext_resource type="PackedScene" uid="uid://dw7i2pd8so2by" path="res://characters/ennemies/candy apple zombie/candy_apple_zombie.tscn" id="5_r68aa"]
+[ext_resource type="PackedScene" uid="uid://da1di15hru4tu" path="res://characters/ennemies/marauder leader/marauder_leader.tscn" id="6_5v0gw"]
+[ext_resource type="Script" path="res://hud.gd" id="7_dqs8s"]
+[ext_resource type="PackedScene" uid="uid://ekwe5eahfn3a" path="res://HUD/texture_progress_bar.tscn" id="7_s07hj"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_myu7f")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_e65tn")]
+position = Vector2(-65, 226)
+scale = Vector2(0.5, 0.5)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_wee38")]
+
+[node name="Finn" parent="." instance=ExtResource("4_yvcp4")]
+position = Vector2(1634, 196)
+GRAVITY = 10
+MAXFALLSPEED = 200
+MAXSPEED = 200
+JUMPFORCE = 350
+
+[node name="Candy Apple Zombie" parent="." instance=ExtResource("5_r68aa")]
+position = Vector2(1449, 227)
+scale = Vector2(0.5, 0.5)
+GRAVITY = 10
+MAXFALLSPEED = 200
+
+[node name="Marauder Leader" parent="." instance=ExtResource("6_5v0gw")]
+position = Vector2(1875, 187)
+scale = Vector2(0.75, 0.75)
+GRAVITY = 10
+MAXFALLSPEED = 200
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2(0.25, 0.25)
+transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
+script = ExtResource("7_dqs8s")
+
+[node name="HPProgressBar" parent="HUD" instance=ExtResource("7_s07hj")]
+offset_left = -512.0
+offset_top = -176.0
+offset_right = 678.0
+offset_bottom = 220.0
+scale = Vector2(1.09325, 1.46954)

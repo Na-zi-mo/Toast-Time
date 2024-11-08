@@ -1,7 +1,8 @@
 extends CharacterBody2D
 class_name GenericCharacter
 
-@onready var health_component = $Health
+@onready var HealthClass = preload("res://characters/health.gd")
+var health_component : Health
 
 var anim_player : AnimationPlayer
 var sprite : Sprite2D
@@ -13,3 +14,6 @@ func get_animation_player () -> AnimationPlayer:
 
 func take_damage(damage):
 	health_component.take_damage(damage)
+
+func heal(amount):
+	health_component.heal(amount)

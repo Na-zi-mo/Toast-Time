@@ -24,23 +24,24 @@ func _ready() -> void:
 	anim_player = $AnimationPlayer
 	sprite = $Sprite2D	
 	anim_player.play("idle")
+	health_component = HealthClass.new()
+	health_component.health = 100
+	health_component.max_health = 100
 	
+	# to change health on health component call 
+	#take_damage(..)
+	#heal()
+	# then these signals with call health_changed that will call update_health in hud
 	
+	#add_child(life_timer)
+	#life_timer.wait_time = 1.0
+	#life_timer.autostart = true
+	#life_timer.timeout.connect(_on_life_timer_timeout)
+	#life_timer.start()
 	
-	
-	add_child(life_timer)
-	life_timer.wait_time = 1.0
-	life_timer.autostart = true
-	life_timer.timeout.connect(_on_life_timer_timeout)
-	life_timer.start()
-func _on_life_timer_timeout() -> void :
-	
-	if (hp <= 0 || hp >= max_hp):
-		hp_increment = -hp_increment
-	
-	hp += hp_increment
-			
-	PlayerHit.emit(hp, max_hp)
+#func _on_life_timer_timeout() -> void :
+	#
+	#take_damage(10)
 
 func apply_force(force : Vector2):
 	motion += force

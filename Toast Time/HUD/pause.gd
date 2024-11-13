@@ -12,4 +12,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://HUD/menu.tscn")

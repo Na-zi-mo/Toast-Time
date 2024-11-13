@@ -6,7 +6,7 @@ class_name Player
 @export var MAXSPEED = 200
 @export var JUMPFORCE = 350
 
-signal PlayerHit(value : int, max_value : int)
+#signal PlayerHit(value : int, max_value : int)
 var life_timer : Timer = Timer.new()
 var hp : int = 100
 var max_hp : int = 100

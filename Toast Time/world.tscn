@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://byl786d032n78"]
+[gd_scene load_steps=10 format=3 uid="uid://byl786d032n78"]
 
 [ext_resource type="PackedScene" uid="uid://ddf2lmweuwi16" path="res://tile_map_layer.tscn" id="1_e65tn"]
 [ext_resource type="Script" path="res://world.gd" id="1_myu7f"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dw7i2pd8so2by" path="res://characters/ennemies/candy apple zombie/candy_apple_zombie.tscn" id="5_r68aa"]
 [ext_resource type="PackedScene" uid="uid://da1di15hru4tu" path="res://characters/ennemies/marauder leader/marauder_leader.tscn" id="6_5v0gw"]
 [ext_resource type="Script" path="res://hud.gd" id="7_dqs8s"]
+[ext_resource type="PackedScene" uid="uid://gsrbx7fvndjc" path="res://pause.tscn" id="7_l1nf6"]
 [ext_resource type="PackedScene" uid="uid://ekwe5eahfn3a" path="res://HUD/texture_progress_bar.tscn" id="7_s07hj"]
 
 [node name="World" type="Node2D"]
@@ -34,6 +35,17 @@ damage = 50
 scale = Vector2(0.25, 0.25)
 transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 script = ExtResource("7_dqs8s")
+
+[node name="Pause" parent="HUD" instance=ExtResource("7_l1nf6")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(3.54545, 2.6087)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="HPProgressBar" parent="HUD" instance=ExtResource("7_s07hj")]
 offset_left = -512.0

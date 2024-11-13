@@ -12,6 +12,7 @@ var hp : int = 100
 var max_hp : int = 100
 var hp_increment : int = 2
 
+var flag_dead : bool = false
 
 const ACCEL = 75.0
 var accel = ACCEL
@@ -27,6 +28,7 @@ func _ready() -> void:
 	health_component = HealthClass.new()
 	health_component.health = 100
 	health_component.max_health = 100
+	health_component.connect("died", dead)
 	
 	# to change health on health component call 
 	#take_damage(..)
@@ -43,8 +45,12 @@ func _ready() -> void:
 	#
 	#take_damage(10)
 
+func dead():
+	flag_dead = true
+
 func apply_force(force : Vector2):
-	motion += force
+	if not flag_dead:
+		motion += force
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:
@@ -58,6 +64,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func has_been_hit(velocity: Vector2, damage: int):
-	hit_velocity = velocity
-	hit_flag = true
-	take_damage(damage)
+	if not flag_dead:
+		hit_velocity = velocity
+		hit_flag = true
+		take_damage(damage)

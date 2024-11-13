@@ -35,7 +35,11 @@ func update(delta: float) -> void:
 		Transitioned.emit(self, "hit");
 		
 	
+		
+	
 func physics_update(delta: float) -> void:
 	if not anim_player : return
 	if !anim_player.is_playing():
+		if player.flag_dead:
+			Transitioned.emit(self, "dead");
 		anim_player.play("idle")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cna7dp0s2c5vy"
-path="res://.godot/imported/screen.jpg-e8be75bebb708655c23a2db83e04e8f3.ctex"
+uid="uid://qfiraamqlb8e"
+path="res://.godot/imported/toast_time.png-f4679833ad2cfbc1c8b9b331d9139ae7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screen.jpg"
-dest_files=["res://.godot/imported/screen.jpg-e8be75bebb708655c23a2db83e04e8f3.ctex"]
+source_file="res://HUD/toast_time.png"
+dest_files=["res://.godot/imported/toast_time.png-f4679833ad2cfbc1c8b9b331d9139ae7.ctex"]
 
 [params]
 

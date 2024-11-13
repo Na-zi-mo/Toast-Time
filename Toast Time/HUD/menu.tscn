@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ekqklia2u7wt"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_fiapn"]
-[ext_resource type="Texture2D" uid="uid://qfiraamqlb8e" path="res://toast_time.png" id="2_qdt08"]
+[ext_resource type="Script" path="res://HUD/menu.gd" id="1_fiapn"]
+[ext_resource type="Texture2D" uid="uid://qfiraamqlb8e" path="res://HUD/toast_time.png" id="2_qdt08"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

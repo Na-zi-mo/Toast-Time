@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://characters/Finn/finn.tscn" id="4_yvcp4"]
 [ext_resource type="PackedScene" uid="uid://dw7i2pd8so2by" path="res://characters/ennemies/candy apple zombie/candy_apple_zombie.tscn" id="5_r68aa"]
 [ext_resource type="PackedScene" uid="uid://da1di15hru4tu" path="res://characters/ennemies/marauder leader/marauder_leader.tscn" id="6_5v0gw"]
-[ext_resource type="Script" path="res://hud.gd" id="7_dqs8s"]
-[ext_resource type="PackedScene" uid="uid://gsrbx7fvndjc" path="res://pause.tscn" id="7_l1nf6"]
+[ext_resource type="Script" path="res://HUD/hud.gd" id="7_dqs8s"]
+[ext_resource type="PackedScene" uid="uid://gsrbx7fvndjc" path="res://HUD/pause.tscn" id="7_l1nf6"]
 [ext_resource type="PackedScene" uid="uid://ekwe5eahfn3a" path="res://HUD/texture_progress_bar.tscn" id="7_s07hj"]
 
 [node name="World" type="Node2D"]

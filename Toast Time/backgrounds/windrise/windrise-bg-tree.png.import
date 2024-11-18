@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bit4062vla8da"
-path="res://.godot/imported/platform.png-294bd5c50a1eb61c037e45a597afe542.ctex"
+uid="uid://dpxc0vjhnlgq2"
+path="res://.godot/imported/windrise-bg-tree.png-cd2a92b27756cfcb4d8139de9cc1f476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://layers/windrise/platform.png"
-dest_files=["res://.godot/imported/platform.png-294bd5c50a1eb61c037e45a597afe542.ctex"]
+source_file="res://backgrounds/windrise/windrise-bg-tree.png"
+dest_files=["res://.godot/imported/windrise-bg-tree.png-cd2a92b27756cfcb4d8139de9cc1f476.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq44j7iy1fc3y"
-path="res://.godot/imported/windrise-bg-cliff.png-41b49f32be05d0ee0f9b4eeaa2899701.ctex"
+uid="uid://b3hph2xfxah4g"
+path="res://.godot/imported/4.png-78836d4d2479a5cecf6bb6dd6dbfe9d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://layers/windrise/windrise-bg-cliff.png"
-dest_files=["res://.godot/imported/windrise-bg-cliff.png-41b49f32be05d0ee0f9b4eeaa2899701.ctex"]
+source_file="res://backgrounds/cave/4.png"
+dest_files=["res://.godot/imported/4.png-78836d4d2479a5cecf6bb6dd6dbfe9d9.ctex"]
 
 [params]
 

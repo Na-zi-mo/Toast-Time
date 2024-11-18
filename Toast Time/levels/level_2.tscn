@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://drk20wx7nmvwe"]
+
+[ext_resource type="PackedScene" uid="uid://c64s5xgpkodja" path="res://backgrounds/cave_background.tscn" id="1_myqxu"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="CaveBackground" parent="." instance=ExtResource("1_myqxu")]
+offset = Vector2(720, 405)
+scale = Vector2(0.75, 0.75)
+transform = Transform2D(0.75, 0, 0, 0.75, 720, 405)

@@ -20,7 +20,7 @@ scale = Vector2(0.5, 0.5)
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_wee38")]
 
 [node name="Finn" parent="." instance=ExtResource("4_yvcp4")]
-position = Vector2(174, 167)
+position = Vector2(2129, 224)
 
 [node name="Candy Apple Zombie" parent="." instance=ExtResource("5_r68aa")]
 position = Vector2(1449, 227)

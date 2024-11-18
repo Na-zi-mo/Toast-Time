@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://drk20wx7nmvwe"]
+[gd_scene load_steps=8 format=3 uid="uid://drk20wx7nmvwe"]
 
 [ext_resource type="PackedScene" uid="uid://c64s5xgpkodja" path="res://backgrounds/cave_background.tscn" id="1_myqxu"]
+[ext_resource type="Script" path="res://HUD/hud.gd" id="2_fqphk"]
+[ext_resource type="PackedScene" uid="uid://gsrbx7fvndjc" path="res://HUD/pause.tscn" id="3_d7jlw"]
+[ext_resource type="PackedScene" uid="uid://ekwe5eahfn3a" path="res://HUD/texture_progress_bar.tscn" id="4_fcm1w"]
+[ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://characters/Finn/finn.tscn" id="5_0130i"]
+[ext_resource type="Texture2D" uid="uid://d2dq1tto4vwli" path="res://icon.svg" id="6_c5qs5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r644"]
+size = Vector2(128, 121)
 
 [node name="Level2" type="Node2D"]
 
@@ -8,3 +16,43 @@
 offset = Vector2(720, 405)
 scale = Vector2(0.75, 0.75)
 transform = Transform2D(0.75, 0, 0, 0.75, 720, 405)
+
+[node name="Finn" parent="." instance=ExtResource("5_0130i")]
+position = Vector2(275, 523)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(291, 624.5)
+shape = SubResource("RectangleShape2D_3r644")
+
+[node name="Icon" type="Sprite2D" parent="Area2D"]
+position = Vector2(289, 623)
+texture = ExtResource("6_c5qs5")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2(0.25, 0.25)
+transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
+script = ExtResource("2_fqphk")
+
+[node name="Pause" parent="HUD" instance=ExtResource("3_d7jlw")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 756.0
+offset_top = 516.0
+offset_right = 756.0
+offset_bottom = 516.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HPProgressBar" parent="HUD" instance=ExtResource("4_fcm1w")]
+offset_left = -512.0
+offset_top = -176.0
+offset_right = 678.0
+offset_bottom = 220.0
+scale = Vector2(1.09325, 1.46954)

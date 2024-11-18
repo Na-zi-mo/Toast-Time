@@ -19,4 +19,4 @@ func _on_body_entered(body: Node2D) -> void:
 		var next_level_number = current_scene_file.to_int() + 1
 		var next_level_path = LEVEL_FILE_PATH + str(next_level_number) + ".tscn"
 		print(next_level_path)
-		#get_tree().change_scene_to_file(next_level_path)
+		get_tree().change_scene_to_file(next_level_path)

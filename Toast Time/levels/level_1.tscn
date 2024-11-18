@@ -1,9 +1,15 @@
-[gd_scene load_steps=15 format=4 uid="uid://ddf2lmweuwi16"]
+[gd_scene load_steps=21 format=4 uid="uid://ddf2lmweuwi16"]
 
 [ext_resource type="Texture2D" uid="uid://5kdtbio3fxkk" path="res://tilesets/tileset.png" id="1_8i5ap"]
 [ext_resource type="PackedScene" uid="uid://vmhp12kclfor" path="res://backgrounds/windrise_background.tscn" id="1_pt8ie"]
 [ext_resource type="Texture2D" uid="uid://ddmgdqrxlqyo5" path="res://tilesets/props.png" id="2_2yeq1"]
 [ext_resource type="PackedScene" uid="uid://bhrnln662kck" path="res://levels/next_level.tscn" id="4_tjw74"]
+[ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://characters/Finn/finn.tscn" id="5_lt8pk"]
+[ext_resource type="PackedScene" uid="uid://dw7i2pd8so2by" path="res://characters/ennemies/candy apple zombie/candy_apple_zombie.tscn" id="6_dodet"]
+[ext_resource type="PackedScene" uid="uid://da1di15hru4tu" path="res://characters/ennemies/marauder leader/marauder_leader.tscn" id="7_d57lt"]
+[ext_resource type="Script" path="res://HUD/hud.gd" id="8_2cmod"]
+[ext_resource type="PackedScene" uid="uid://gsrbx7fvndjc" path="res://HUD/pause.tscn" id="9_nnbce"]
+[ext_resource type="PackedScene" uid="uid://ekwe5eahfn3a" path="res://HUD/texture_progress_bar.tscn" id="10_vcok3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4x0qw"]
 texture = ExtResource("1_8i5ap")
@@ -2149,3 +2155,42 @@ tile_set = SubResource("TileSet_w7ukg")
 
 [node name="NextLevel" parent="." instance=ExtResource("4_tjw74")]
 position = Vector2(5002, 170)
+
+[node name="Finn" parent="." instance=ExtResource("5_lt8pk")]
+position = Vector2(4318, 54)
+
+[node name="Candy Apple Zombie" parent="." instance=ExtResource("6_dodet")]
+position = Vector2(3012, 128)
+scale = Vector2(0.5, 0.5)
+
+[node name="Marauder Leader" parent="." instance=ExtResource("7_d57lt")]
+position = Vector2(3498, 6)
+scale = Vector2(0.75, 0.75)
+damage = 50
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2(0.25, 0.25)
+transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
+script = ExtResource("8_2cmod")
+
+[node name="Pause" parent="HUD" instance=ExtResource("9_nnbce")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 756.0
+offset_top = 516.0
+offset_right = 756.0
+offset_bottom = 516.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HPProgressBar" parent="HUD" instance=ExtResource("10_vcok3")]
+offset_left = -512.0
+offset_top = -176.0
+offset_right = 678.0
+offset_bottom = 220.0
+scale = Vector2(1.09325, 1.46954)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://vmhp12kclfor"]
 
-[ext_resource type="Texture2D" uid="uid://bignqmogo2irf" path="res://layers/windrise-bg-sky.png" id="1_5ebse"]
-[ext_resource type="Texture2D" uid="uid://cq44j7iy1fc3y" path="res://layers/windrise-bg-cliff.png" id="2_y1n3s"]
-[ext_resource type="Texture2D" uid="uid://dpxc0vjhnlgq2" path="res://layers/windrise-bg-tree.png" id="3_7brrk"]
-[ext_resource type="Texture2D" uid="uid://bkc4vs423sbsr" path="res://layers/windrise-bg-front.png" id="4_ywdth"]
+[ext_resource type="Texture2D" uid="uid://bignqmogo2irf" path="res://layers/windrise/windrise-bg-sky.png" id="1_5ebse"]
+[ext_resource type="Texture2D" uid="uid://cq44j7iy1fc3y" path="res://layers/windrise/windrise-bg-cliff.png" id="2_y1n3s"]
+[ext_resource type="Texture2D" uid="uid://dpxc0vjhnlgq2" path="res://layers/windrise/windrise-bg-tree.png" id="3_7brrk"]
+[ext_resource type="Texture2D" uid="uid://bkc4vs423sbsr" path="res://layers/windrise/windrise-bg-front.png" id="4_ywdth"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 offset = Vector2(256, 192)

@@ -29,7 +29,7 @@ func handle_player():
 		
 		if collider == player:
 			# "Player detected!
-			print('player detected!!!')
+			#print('player detected!!!')
 			Transitioned.emit(self, "charge")
 			return
 
@@ -39,7 +39,7 @@ func enter() -> void:
 	floor_detector = character.get_node("FloorDetector") as RayCast2D
 	player_detector = character.get_node("PlayerDetector") as RayCast2D
 	randomize_walk_time()
-	print("Marauder : Run")
+	#print("Marauder : Run")
 
 func update(delta: float) -> void:
 	if not player:

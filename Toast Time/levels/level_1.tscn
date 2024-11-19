@@ -2161,11 +2161,9 @@ position = Vector2(4318, 54)
 
 [node name="Candy Apple Zombie" parent="." instance=ExtResource("6_dodet")]
 position = Vector2(3012, 128)
-scale = Vector2(0.5, 0.5)
 
 [node name="Marauder Leader" parent="." instance=ExtResource("7_d57lt")]
 position = Vector2(3498, 6)
-scale = Vector2(0.75, 0.75)
 damage = 50
 
 [node name="HUD" type="CanvasLayer" parent="."]

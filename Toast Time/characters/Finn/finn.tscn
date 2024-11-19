@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://characters/Finn/hit_state.gd" id="10_p2n0m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxclw"]
-radius = 5.0
-height = 28.0
+radius = 18.0
+height = 46.0
 
 [sub_resource type="Animation" id="Animation_jbal5"]
 length = 0.001
@@ -909,7 +909,6 @@ position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_dxclw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_aq2f0")
 hframes = 13
 vframes = 65

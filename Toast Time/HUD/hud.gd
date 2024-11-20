@@ -1,4 +1,6 @@
 extends CanvasLayer
+class_name HUD
+
 
 var player : Player
 var health_bar : GenericProgressBar

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://drk20wx7nmvwe"]
+[gd_scene load_steps=13 format=4 uid="uid://drk20wx7nmvwe"]
 
+[ext_resource type="Script" path="res://levels/level_2.gd" id="1_8wd7x"]
 [ext_resource type="PackedScene" uid="uid://c64s5xgpkodja" path="res://backgrounds/cave_background.tscn" id="1_myqxu"]
 [ext_resource type="Texture2D" uid="uid://ddmgdqrxlqyo5" path="res://tilesets/props.png" id="2_cyi8g"]
 [ext_resource type="Texture2D" uid="uid://5kdtbio3fxkk" path="res://tilesets/tileset.png" id="2_fdvr7"]
@@ -657,6 +658,7 @@ sources/0 = SubResource("TileSetAtlasSource_p7wyw")
 
 [node name="Level2" type="Node2D"]
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_8wd7x")
 
 [node name="CaveBackground" parent="." instance=ExtResource("1_myqxu")]
 offset = Vector2(375, 400)

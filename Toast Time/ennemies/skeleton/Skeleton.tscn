@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsfe7ghfoll25"]
+
+[ext_resource type="Script" path="res://state_machine.gd" id="1_mmjan"]
+[ext_resource type="Script" path="res://ennemies/skeleton/skeleton.gd" id="1_vepap"]
+[ext_resource type="Script" path="res://ennemies/skeleton/idle_state.gd" id="2_3kett"]
+[ext_resource type="Texture2D" uid="uid://hyljuxu3ptt2" path="res://ennemies/skeleton/Skeleton.png" id="2_djtop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12p2h"]
+size = Vector2(49, 61)
+
+[node name="Skeleton" type="CharacterBody2D"]
+script = ExtResource("1_vepap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_12p2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_djtop")
+hframes = 11
+vframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_mmjan")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("2_3kett")

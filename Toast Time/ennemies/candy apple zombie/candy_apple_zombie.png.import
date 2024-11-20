@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0gatk0hnkftq"
-path="res://.godot/imported/candy_apple_zombie.png-8a38478754c79a9b245be573a619ce26.ctex"
+path="res://.godot/imported/candy_apple_zombie.png-019493001dad595177da8d752344d8d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/ennemies/candy apple zombie/candy_apple_zombie.png"
-dest_files=["res://.godot/imported/candy_apple_zombie.png-8a38478754c79a9b245be573a619ce26.ctex"]
+source_file="res://ennemies/candy apple zombie/candy_apple_zombie.png"
+dest_files=["res://.godot/imported/candy_apple_zombie.png-019493001dad595177da8d752344d8d3.ctex"]
 
 [params]
 

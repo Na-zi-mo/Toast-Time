@@ -14,7 +14,8 @@ func enter():
 func update(delta: float) -> void:
 	var dir = manage_input()
 	
-	player.motion = player.motion.lerp(Vector2.ZERO, 0.2)
+	#player.motion = player.motion.lerp(Vector2.ZERO, 0.2)
+	player.motion.x = lerp(player.motion.x, 0.0, 0.2)
 	
 	if not player.is_on_floor() and player.velocity.y > 0 :
 		Transitioned.emit(self, "fall")

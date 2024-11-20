@@ -941,6 +941,10 @@ player = NodePath("../..")
 script = ExtResource("6_kqo52")
 player = NodePath("../..")
 
+[node name="JumpHeightTimer" type="Timer" parent="StateMachine/Jump"]
+wait_time = 0.1
+one_shot = true
+
 [node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
 script = ExtResource("7_hq3jd")
 player = NodePath("../..")
@@ -956,3 +960,5 @@ player = NodePath("../..")
 [node name="Hit" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
 script = ExtResource("10_p2n0m")
 player = NodePath("../..")
+
+[connection signal="timeout" from="StateMachine/Jump/JumpHeightTimer" to="StateMachine/Jump" method="_on_jump_height_timer_timeout"]

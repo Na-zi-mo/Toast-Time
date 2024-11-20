@@ -6,6 +6,8 @@ class_name Player
 @export var MAXSPEED = 200
 @export var JUMPFORCE = 350
 
+
+
 #signal PlayerHit(value : int, max_value : int)
 var life_timer : Timer = Timer.new()
 var hp : int = 100
@@ -56,6 +58,7 @@ func _physics_process(delta: float) -> void:
 		motion.y = MAXFALLSPEED
 	velocity = motion
 	move_and_slide()
+	
 
 func has_been_hit(velocity: Vector2, damage: int):
 	hit_velocity = velocity

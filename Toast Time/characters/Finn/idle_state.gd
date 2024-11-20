@@ -32,6 +32,9 @@ func update(delta: float) -> void:
 	elif Input.is_action_just_pressed("attack"):
 		Transitioned.emit(self, "attack")
 		
+	if Input.is_action_just_pressed('secondary_attack'):
+		Transitioned.emit(self, "secondaryattack")
+		
 	if player.hit_flag:
 		Transitioned.emit(self, "hit");
 		

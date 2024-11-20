@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=4 uid="uid://ddf2lmweuwi16"]
+[gd_scene load_steps=22 format=4 uid="uid://ddf2lmweuwi16"]
 
+[ext_resource type="Script" path="res://levels/level_1.gd" id="1_6mqvn"]
 [ext_resource type="Texture2D" uid="uid://5kdtbio3fxkk" path="res://tilesets/tileset.png" id="1_8i5ap"]
 [ext_resource type="PackedScene" uid="uid://vmhp12kclfor" path="res://backgrounds/windrise_background.tscn" id="1_pt8ie"]
 [ext_resource type="Texture2D" uid="uid://ddmgdqrxlqyo5" path="res://tilesets/props.png" id="2_2yeq1"]
@@ -2130,6 +2131,7 @@ sources/0 = SubResource("TileSetAtlasSource_gd8e0")
 [node name="Level1" type="Node2D"]
 position = Vector2(-65, 226)
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_6mqvn")
 
 [node name="WindriseBackground" parent="." instance=ExtResource("1_pt8ie")]
 

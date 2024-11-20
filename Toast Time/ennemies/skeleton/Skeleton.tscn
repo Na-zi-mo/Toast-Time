@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsfe7ghfoll25"]
+[gd_scene load_steps=8 format=3 uid="uid://dsfe7ghfoll25"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_mmjan"]
 [ext_resource type="Script" path="res://ennemies/skeleton/skeleton.gd" id="1_vepap"]
@@ -7,6 +7,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12p2h"]
 size = Vector2(49, 61)
+
+[sub_resource type="Animation" id="Animation_iuqu0"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06tqm"]
+_data = {
+"walk": SubResource("Animation_iuqu0")
+}
 
 [node name="Skeleton" type="CharacterBody2D"]
 script = ExtResource("1_vepap")
@@ -22,6 +30,9 @@ vframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_06tqm")
+}
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_mmjan")

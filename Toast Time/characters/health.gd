@@ -13,12 +13,12 @@ func _init(initial_health:float = 100.0):
 	health = max_health
 
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: float) -> void:
 	health -= damage
 	emit_signal("health_changed", health, max_health)
 	if health <= 0:
 		emit_signal("died")
 
-func heal(amount: int) -> void:
+func heal(amount: float) -> void:
 	health = min(health + amount, max_health)
 	emit_signal("health_changed", health, max_health)

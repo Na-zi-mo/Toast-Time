@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsfe7ghfoll25"]
+[gd_scene load_steps=11 format=3 uid="uid://dsfe7ghfoll25"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_mmjan"]
 [ext_resource type="Script" path="res://ennemies/skeleton/skeleton.gd" id="1_vepap"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hyljuxu3ptt2" path="res://ennemies/skeleton/Skeleton.png" id="2_djtop"]
 [ext_resource type="Texture2D" uid="uid://bxr6vsht4dds3" path="res://ennemies/skeleton/Under.png" id="5_rxixa"]
 [ext_resource type="Texture2D" uid="uid://dcbs0awterqup" path="res://ennemies/skeleton/Progress.png" id="6_08gwg"]
+[ext_resource type="Script" path="res://ennemies/skeleton/texture_progress_bar.gd" id="7_7mfh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12p2h"]
 size = Vector2(49, 61)
@@ -53,3 +54,4 @@ value = 100.0
 texture_under = ExtResource("5_rxixa")
 texture_progress = ExtResource("6_08gwg")
 texture_progress_offset = Vector2(2, 2)
+script = ExtResource("7_7mfh3")

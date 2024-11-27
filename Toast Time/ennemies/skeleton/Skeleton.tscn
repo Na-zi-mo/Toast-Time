@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsfe7ghfoll25"]
+[gd_scene load_steps=10 format=3 uid="uid://dsfe7ghfoll25"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_mmjan"]
 [ext_resource type="Script" path="res://ennemies/skeleton/skeleton.gd" id="1_vepap"]
 [ext_resource type="Script" path="res://ennemies/skeleton/idle_state.gd" id="2_3kett"]
 [ext_resource type="Texture2D" uid="uid://hyljuxu3ptt2" path="res://ennemies/skeleton/Skeleton.png" id="2_djtop"]
+[ext_resource type="Texture2D" uid="uid://bxr6vsht4dds3" path="res://ennemies/skeleton/Under.png" id="5_rxixa"]
+[ext_resource type="Texture2D" uid="uid://dcbs0awterqup" path="res://ennemies/skeleton/Progress.png" id="6_08gwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12p2h"]
 size = Vector2(49, 61)
@@ -41,3 +43,13 @@ initial_state = NodePath("Idle")
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
 script = ExtResource("2_3kett")
 character = NodePath("../..")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -23.0
+offset_top = -43.0
+offset_right = 27.0
+offset_bottom = -3.0
+value = 100.0
+texture_under = ExtResource("5_rxixa")
+texture_progress = ExtResource("6_08gwg")
+texture_progress_offset = Vector2(2, 2)

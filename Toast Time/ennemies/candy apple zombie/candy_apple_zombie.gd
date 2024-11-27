@@ -10,9 +10,7 @@ func _ready() -> void:
 	anim_player = $AnimationPlayer
 	sprite = $Sprite2D
 	anim_player.play("idle")
-	health_component = HealthClass.new()
-	health_component.health = 30
-	health_component.max_health = 30
+	health_component = HealthClass.new(50)
 	direction = Vector2(scale.x, 0)
 
 # Called every physics frame

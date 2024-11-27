@@ -5,8 +5,13 @@ signal health_changed(current_health, max_health)
 signal died
 
 
-var max_health := 100
-var health := 100
+var max_health : float
+var health : float
+
+func _init(initial_health:float = 100.0):
+	max_health = initial_health
+	health = max_health
+
 
 func take_damage(damage: int) -> void:
 	health -= damage

@@ -26,9 +26,9 @@ func _ready() -> void:
 	anim_player = $AnimationPlayer
 	sprite = $Sprite2D	
 	anim_player.play("idle")
-	health_component = HealthClass.new()
-	health_component.health = 100
-	health_component.max_health = 100
+	health_component = HealthClass.new(100)
+	#health_component.health = 100
+	#health_component.max_health = 100
 	
 	# to change health on health component call 
 	#take_damage(..)

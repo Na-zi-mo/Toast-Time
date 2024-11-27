@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://drk20wx7nmvwe"]
+[gd_scene load_steps=14 format=4 uid="uid://drk20wx7nmvwe"]
 
 [ext_resource type="Script" path="res://levels/level_2.gd" id="1_8wd7x"]
 [ext_resource type="PackedScene" uid="uid://c64s5xgpkodja" path="res://backgrounds/cave_background.tscn" id="1_myqxu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gsrbx7fvndjc" path="res://HUD/pause.tscn" id="3_d7jlw"]
 [ext_resource type="PackedScene" uid="uid://ekwe5eahfn3a" path="res://HUD/texture_progress_bar.tscn" id="4_fcm1w"]
 [ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://characters/Finn/finn.tscn" id="5_0130i"]
+[ext_resource type="PackedScene" uid="uid://dsfe7ghfoll25" path="res://ennemies/skeleton/Skeleton.tscn" id="6_hqsip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1yji"]
 texture = ExtResource("2_cyi8g")
@@ -675,6 +676,9 @@ tile_set = SubResource("TileSet_o8ui5")
 
 [node name="Finn" parent="." instance=ExtResource("5_0130i")]
 position = Vector2(88, 642)
+
+[node name="Skeleton" parent="." instance=ExtResource("6_hqsip")]
+position = Vector2(462, 630)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 scale = Vector2(0.25, 0.25)

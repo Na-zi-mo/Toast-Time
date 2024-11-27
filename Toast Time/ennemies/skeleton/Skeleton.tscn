@@ -38,5 +38,6 @@ libraries = {
 script = ExtResource("1_mmjan")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
 script = ExtResource("2_3kett")
+character = NodePath("../..")

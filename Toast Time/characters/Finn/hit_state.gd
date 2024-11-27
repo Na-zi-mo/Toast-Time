@@ -23,6 +23,7 @@ func update(delta : float) -> void:
 		player.facing_right = true
 	elif dir < 0:
 		player.facing_right = false
+		
 	
 	
 	

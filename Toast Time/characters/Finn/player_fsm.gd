@@ -6,6 +6,8 @@ class_name Player
 @export var MAXSPEED = 200
 @export var JUMPFORCE = 350
 
+@onready var attack_zone = $AttackZone
+
 
 
 #signal PlayerHit(value : int, max_value : int)

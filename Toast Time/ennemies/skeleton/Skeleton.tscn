@@ -19,7 +19,7 @@ _data = {
 "walk": SubResource("Animation_iuqu0")
 }
 
-[node name="Skeleton" type="CharacterBody2D"]
+[node name="Skeleton" type="CharacterBody2D" groups=["Enemies", "Ennemies"]]
 script = ExtResource("1_vepap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -32,7 +32,6 @@ project/assembly_name="TP3"
 [global_group]
 
 Enemies=""
-Player=""
 
 [input]
 

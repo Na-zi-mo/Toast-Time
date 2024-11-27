@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsfe7ghfoll25"]
+[gd_scene load_steps=13 format=3 uid="uid://dsfe7ghfoll25"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_mmjan"]
 [ext_resource type="Script" path="res://ennemies/skeleton/skeleton.gd" id="1_vepap"]
 [ext_resource type="Script" path="res://ennemies/skeleton/idle_state.gd" id="2_3kett"]
 [ext_resource type="Texture2D" uid="uid://hyljuxu3ptt2" path="res://ennemies/skeleton/Skeleton.png" id="2_djtop"]
+[ext_resource type="Script" path="res://ennemies/skeleton/walk_state.gd" id="5_chgs6"]
 [ext_resource type="Texture2D" uid="uid://bxr6vsht4dds3" path="res://ennemies/skeleton/Under.png" id="5_rxixa"]
 [ext_resource type="Texture2D" uid="uid://dcbs0awterqup" path="res://ennemies/skeleton/Progress.png" id="6_08gwg"]
 [ext_resource type="Script" path="res://ennemies/skeleton/texture_progress_bar.gd" id="7_7mfh3"]
@@ -11,12 +12,66 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12p2h"]
 size = Vector2(49, 61)
 
-[sub_resource type="Animation" id="Animation_iuqu0"]
+[sub_resource type="Animation" id="Animation_l5fb0"]
 resource_name = "walk"
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_djtop")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_06tqm"]
+[sub_resource type="Animation" id="Animation_n16dq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_djtop")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqjbi"]
 _data = {
-"walk": SubResource("Animation_iuqu0")
+"RESET": SubResource("Animation_n16dq"),
+"walk": SubResource("Animation_l5fb0")
 }
 
 [node name="Skeleton" type="CharacterBody2D" groups=["Enemies", "Ennemies"]]
@@ -32,9 +87,8 @@ hframes = 11
 vframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
 libraries = {
-"": SubResource("AnimationLibrary_06tqm")
+"": SubResource("AnimationLibrary_cqjbi")
 }
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -43,6 +97,10 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
 script = ExtResource("2_3kett")
+character = NodePath("../..")
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
+script = ExtResource("5_chgs6")
 character = NodePath("../..")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]

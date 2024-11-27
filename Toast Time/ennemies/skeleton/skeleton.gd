@@ -35,5 +35,7 @@ func _physics_process(delta: float) -> void:
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
 	velocity = motion
+	
+	#print(velocity)
 	move_and_slide()
 		

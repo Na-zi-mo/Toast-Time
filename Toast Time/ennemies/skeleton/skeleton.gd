@@ -5,6 +5,8 @@ extends GenericCharacter
 @export var GRAVITY = 10
 @export var MAXFALLSPEED = 200
 
+@export var is_alive = false
+
 @onready var health_bar = $TextureProgressBar
 
 func _ready() -> void:

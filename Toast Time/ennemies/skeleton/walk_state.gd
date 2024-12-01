@@ -21,6 +21,10 @@ func enter() -> void:
 func update(delta: float) -> void:
 	diff = (player.position.x - character.position.x) 
 	dir = -1 if (diff < 0) else 1 
+	
+	if character.health_component.health <= 0:
+		character.get_animation_player().play("dying")
+		Transitioned.emit(self, "dead")
 
 func physics_update(delta: float) -> void:
 	

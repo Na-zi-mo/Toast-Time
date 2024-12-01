@@ -1,4 +1,4 @@
-class_name RevivingState_Skeleton
+class_name DeadState_Skeleton
 extends BaseState
 
 @export var character : GenericCharacter
@@ -13,9 +13,9 @@ func get_player() -> CharacterBody2D:
 
 func enter() -> void:
 	if character.get_animation_player() != null:
-		character.is_alive = true
-		character.get_animation_player().play("reviving")
+		character.is_alive = false
+		character.motion.x = 0
 
 func update(delta : float) -> void :
 	if (!character.anim_player.is_playing()) :
-		Transitioned.emit(self, "walk")
+		Transitioned.emit(self, "dead")

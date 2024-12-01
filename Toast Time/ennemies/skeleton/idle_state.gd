@@ -35,5 +35,5 @@ func update(delta : float) -> void :
 	var diff := (player.position.x - character.position.x) as float
 	
 	if ( abs(diff) < 200 ):
-		Transitioned.emit(self, "walk")
+		Transitioned.emit(self, "reviving")
 			

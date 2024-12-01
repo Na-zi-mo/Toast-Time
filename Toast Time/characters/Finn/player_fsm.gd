@@ -52,7 +52,13 @@ func apply_force(force : Vector2):
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:
-	sprite.flip_h = !facing_right
+	
+	if facing_right:
+		sprite.flip_h = false
+		attack_zone.position.x = 0
+	else:
+		sprite.flip_h = true
+		attack_zone.position.x = -64
 	
 	motion.y += GRAVITY
 	

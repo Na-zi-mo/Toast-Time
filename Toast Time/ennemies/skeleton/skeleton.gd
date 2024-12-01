@@ -27,6 +27,9 @@ func update_health(value : int, max_value : int):
 	if is_alive:
 		health_bar.update_value(value, max_value)
 
+func apply_force(force : Vector2):
+	motion += force
+
 # Called every physics frame
 func _physics_process(delta: float) -> void:	
 	

@@ -20,3 +20,6 @@ func physics_update(delta: float) -> void:
 func _on_attack_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Ennemies"):
 		body.take_damage(20.0)
+		var dir =  1 if player.facing_right else -1 
+		
+		body.apply_force(Vector2(2000 * dir, 0))

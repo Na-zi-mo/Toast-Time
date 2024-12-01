@@ -47,8 +47,7 @@ func _ready() -> void:
 	#
 	#take_damage(10)
 
-func apply_force(force : Vector2):
-	motion += force
+
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:
@@ -60,13 +59,19 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 		attack_zone.position.x = -64
 	
+	
+	velocity = motion
+	
 	motion.y += GRAVITY
 	
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
-	velocity = motion
+	
 	move_and_slide()
 	
+
+func apply_force(force : Vector2):
+	motion += force
 
 func has_been_hit(velocity: Vector2, damage: int):
 	hit_velocity = velocity

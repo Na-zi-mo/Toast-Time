@@ -1,4 +1,4 @@
-class_name IdleState_Skeleton
+class_name DeadState_Skeleton
 extends BaseState
 
 @export var character : GenericCharacter
@@ -13,7 +13,7 @@ func get_player() -> CharacterBody2D:
 
 func enter() -> void:
 	if character.get_animation_player() != null:
-		character.get_animation_player().play("dead")
+		character.get_animation_player().play("idle")
 
 	player = get_player()
 	idle_time = randf_range(1, 3)

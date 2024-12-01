@@ -9,6 +9,8 @@ extends GenericCharacter
 
 @onready var health_bar = $TextureProgressBar
 
+@onready var detection_area = $DetectAttack
+
 func _ready() -> void:
 
 	anim_player = $AnimationPlayer

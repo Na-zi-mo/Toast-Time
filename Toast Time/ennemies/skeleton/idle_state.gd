@@ -24,12 +24,6 @@ func update(delta : float) -> void :
 		player = get_player()
 		return
 	
-	#if idle_time > 0 :
-		#idle_time -= delta
-	#else :
-		##Transitioned.emit(self, "walk")
-		#return
-	
 	character.velocity.x = 0
 	
 	var diff := (player.position.x - character.position.x) as float
@@ -37,4 +31,3 @@ func update(delta : float) -> void :
 	if ( abs(diff) < 200 ):
 		character.is_alive = true
 		Transitioned.emit(self, "reviving")
-			

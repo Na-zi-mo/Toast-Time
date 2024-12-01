@@ -5,6 +5,7 @@ extends BaseState
 var player 
 var diff : float
 
+
 var ACCEL = 50
 var dir
 
@@ -27,5 +28,9 @@ func update(delta: float) -> void:
 		Transitioned.emit(self, "dead")
 
 func physics_update(delta: float) -> void:
-	
 	character.motion.x = dir * ACCEL
+
+
+func _on_attack_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		body.take_damage(10.0)

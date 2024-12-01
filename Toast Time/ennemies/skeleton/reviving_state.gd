@@ -15,6 +15,7 @@ func enter() -> void:
 	if character.get_animation_player() != null:
 		character.is_alive = true
 		character.get_animation_player().play("reviving")
+		character.heal(75)
 
 func update(delta : float) -> void :
 	if (!character.anim_player.is_playing()) :

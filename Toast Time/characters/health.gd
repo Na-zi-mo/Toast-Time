@@ -17,6 +17,7 @@ func take_damage(damage: float) -> void:
 	health -= damage
 	emit_signal("health_changed", health, max_health)
 	if health <= 0:
+		health = 0
 		emit_signal("died")
 
 func heal(amount: float) -> void:

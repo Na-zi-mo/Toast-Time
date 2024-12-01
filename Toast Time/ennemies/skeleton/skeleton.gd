@@ -22,7 +22,8 @@ func _ready() -> void:
 	direction = Vector2(scale.x, 0)
 
 func update_health(value : int, max_value : int):
-	health_bar.update_value(value, max_value)
+	if is_alive:
+		health_bar.update_value(value, max_value)
 
 # Called every physics frame
 func _physics_process(delta: float) -> void:	
@@ -38,6 +39,7 @@ func _physics_process(delta: float) -> void:
 		motion.y = MAXFALLSPEED
 	velocity = motion
 	
-	#print(velocity)
+	health_bar.visible = is_alive 
+	
 	move_and_slide()
 		

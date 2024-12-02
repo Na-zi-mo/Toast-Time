@@ -34,8 +34,6 @@ func _ready() -> void:
 	SoundManager.play_level2_music()
 	player.connect('end_game', end_game)
 	hud.update_health(player.health_component.health, player.health_component.max_health)
-	
-
 
 func _on_toast_entered(body: Node2D) -> void:
 	if body.is_in_group('Player'):

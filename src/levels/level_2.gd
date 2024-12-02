@@ -8,7 +8,7 @@ var paused = false
 	
 
 func end_game():
-	print('dead')
+	get_tree().change_scene_to_file("res://HUD/game_over.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -6,6 +6,7 @@ extends Node
 @onready var jake_punch = $JakePunch
 @onready var jump = $Jump
 @onready var click = $Click
+@onready var game_over = $GameOver
 
 func stop_musics():
 	cave_music.stop()
@@ -36,7 +37,10 @@ func get_current_music():
 
 func play_jake_punch():
 	jake_punch.play()
-	
+
+func play_game_over():
+	game_over.play()
+		
 func play_jump():
 	jump.play()
 	

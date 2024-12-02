@@ -1514,7 +1514,7 @@ tile_set = ExtResource("5_hk06y")
 position = Vector2(5002, 170)
 
 [node name="Finn" parent="." instance=ExtResource("5_lt8pk")]
-position = Vector2(310, 80)
+position = Vector2(4496, 172)
 
 [node name="Candy Apple Zombie" parent="." instance=ExtResource("6_dodet")]
 position = Vector2(3012, 128)

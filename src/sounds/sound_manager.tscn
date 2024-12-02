@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdx63chyerhh0"]
+[gd_scene load_steps=9 format=3 uid="uid://cdx63chyerhh0"]
 
 [ext_resource type="Script" path="res://sounds/sound_manager.gd" id="1_a0hyp"]
 [ext_resource type="AudioStream" uid="uid://btvfw87cnrjh1" path="res://sounds/menu_music.wav" id="2_hk1gq"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bfqg5o1n8djiq" path="res://sounds/jake_punch.wav" id="5_l4arx"]
 [ext_resource type="AudioStream" uid="uid://b3i04pau530kw" path="res://sounds/jump.wav" id="6_r1ik2"]
 [ext_resource type="AudioStream" uid="uid://4udurlntx11m" path="res://sounds/click.wav" id="7_2w76c"]
+[ext_resource type="AudioStream" uid="uid://bc2rcv1dl7gjx" path="res://sounds/game_over.wav" id="8_5ulf8"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_a0hyp")
@@ -33,4 +34,8 @@ bus = &"SFX"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2w76c")
+bus = &"SFX"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5ulf8")
 bus = &"SFX"

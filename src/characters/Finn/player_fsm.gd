@@ -48,6 +48,9 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 		attack_zone.position.x = -64
 	
+	if self.global_position.y > 400:
+		emit_signal('end_game')
+	
 	if not dead_flag:
 		velocity = motion
 	

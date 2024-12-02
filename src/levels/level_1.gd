@@ -11,7 +11,7 @@ func _ready() -> void:
 	player.connect('end_game', end_game)
 
 func end_game():
-	pass
+	get_tree().change_scene_to_file("res://HUD/game_over.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

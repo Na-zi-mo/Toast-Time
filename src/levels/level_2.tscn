@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://drk20wx7nmvwe"]
+[gd_scene load_steps=17 format=4 uid="uid://drk20wx7nmvwe"]
 
 [ext_resource type="Script" path="res://levels/level_2.gd" id="1_8wd7x"]
 [ext_resource type="PackedScene" uid="uid://c64s5xgpkodja" path="res://backgrounds/cave_background.tscn" id="1_myqxu"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cfu8rj8dlv623" path="res://characters/Finn/finn.tscn" id="5_0130i"]
 [ext_resource type="TileSet" uid="uid://snfhhtjk6j05" path="res://levels/level_1_tileset_with_platforms.tres" id="5_dn1ps"]
 [ext_resource type="PackedScene" uid="uid://dsfe7ghfoll25" path="res://ennemies/skeleton/Skeleton.tscn" id="6_hqsip"]
+[ext_resource type="Texture2D" uid="uid://5jkeqwp7pnr" path="res://levels/magic_toast.png" id="11_g4end"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1yji"]
 texture = ExtResource("2_cyi8g")
@@ -660,6 +661,9 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_p7wyw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_805g0"]
+size = Vector2(640, 640)
+
 [node name="Level2" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8wd7x")
@@ -728,3 +732,16 @@ scale = Vector2(3.86041, 3.88667)
 
 [node name="Skeleton2" parent="." instance=ExtResource("6_hqsip")]
 position = Vector2(938, 656)
+
+[node name="MagicToast" type="Sprite2D" parent="."]
+position = Vector2(1458, 656)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("11_g4end")
+
+[node name="Area2D" type="Area2D" parent="MagicToast"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagicToast/Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_805g0")
+
+[connection signal="body_entered" from="MagicToast/Area2D" to="." method="_on_toast_entered"]

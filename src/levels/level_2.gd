@@ -4,6 +4,8 @@ extends Node2D
 @onready var pause_menu = $HUD/Pause
 var paused = false
 
+@onready var toast = $MagicToast
+
 @onready var player = $Finn
 	
 
@@ -33,3 +35,9 @@ func _ready() -> void:
 	player.connect('end_game', end_game)
 	hud.update_health(player.health_component.health, player.health_component.max_health)
 	
+
+
+func _on_toast_entered(body: Node2D) -> void:
+	if body.is_in_group('Player'):
+		toast.hide()
+		get_tree().change_scene_to_file("res://HUD/game_won.tscn")

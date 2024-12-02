@@ -13,18 +13,24 @@ script = ExtResource("1_a0hyp")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_hk1gq")
+bus = &"Music"
 
 [node name="MonstadtMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_rwpkm")
+bus = &"Music"
 
 [node name="CaveMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dgbbe")
+bus = &"Music"
 
 [node name="JakePunch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_l4arx")
+bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_r1ik2")
+bus = &"SFX"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2w76c")
+bus = &"SFX"

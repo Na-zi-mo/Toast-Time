@@ -13,7 +13,7 @@ var jump_hold_time: float = 0.0
 @export var ACCEL = 30.0
 
 func manage_input() -> int:	
-	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")	
+	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")	
 	return dir
 
 func enter():
@@ -60,6 +60,6 @@ func _on_jump_height_timer_timeout() -> void:
 		#player.motion.y = 0
 	#else:
 		#pass
-	if !Input.is_action_pressed("ui_accept") and player.motion.y < 0:
+	if !Input.is_action_pressed("jump") and player.motion.y < 0:
 		var hold_ratio = jump_hold_time / max_hold_time  # Scale motion based on hold time
 		player.motion.y *= hold_ratio

@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		var formated_memory = "%.3f" % memory
 		var player_x_position  = "%.1f" % player.global_position.x
 		var player_y_position  = "%.1f" % player.global_position.y
-		debug_label.text = "memory : " + str(formated_memory) + " mb" + "\nfps : " + str(Performance.get_monitor(Performance.TIME_FPS)) + " fps\n" + "player position : (" + str(player_x_position) + ", " + str(player_y_position) + ")" 
+		debug_label.text = "memory : " + str(formated_memory) + " mb" + "\nfps : " + str(Performance.get_monitor(Performance.TIME_FPS)) + " fps\n" + "player position : (" + str(player_x_position) + ", " + str(player_y_position) + ")\n player health : " + str(player.health_component.health) + "/" + str(player.health_component.max_health) 
 
 	
 func update_health(value : int, max_value : int):

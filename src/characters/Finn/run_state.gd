@@ -11,7 +11,7 @@ func enter():
 	player.accel = ACCEL_RUN
 
 func manage_input() -> int:	
-	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")	
+	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")	
 	return dir
 
 func update(delta : float) -> void:
@@ -38,7 +38,7 @@ func update(delta : float) -> void:
 	if not player.is_on_floor() and player.velocity.y > 0 :
 		Transitioned.emit(self, "fall")
 		
-	if player.is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+	if player.is_on_floor() and Input.is_action_just_pressed("jump"):
 		Transitioned.emit(self, "jump")
 	elif player.is_on_floor() and Input.is_action_just_pressed("attack"):
 		Transitioned.emit(self, "attack")

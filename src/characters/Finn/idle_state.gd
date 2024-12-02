@@ -5,7 +5,7 @@ class_name PlayerIdle
 var anim_player : AnimationPlayer 
 
 func manage_input() -> int:	
-	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left");
+	var dir = Input.get_action_strength("right") - Input.get_action_strength("left");
 	return dir
 
 func enter():
@@ -27,7 +27,7 @@ func update(delta: float) -> void:
 		Transitioned.emit(self, "run")
 	elif dir != 0:
 		Transitioned.emit(self, "walk")
-	elif Input.is_action_just_pressed("ui_accept"):
+	elif Input.is_action_just_pressed("jump"):
 		Transitioned.emit(self, "jump")
 	elif Input.is_action_just_pressed("attack"):
 		Transitioned.emit(self, "attack")

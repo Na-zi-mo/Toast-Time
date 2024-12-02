@@ -11,7 +11,7 @@ func enter():
 	anim_player.play("knock_down")
 
 func manage_input() -> int:	
-	var dir = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")	
+	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")	
 	return dir
 	
 func update(delta : float) -> void:

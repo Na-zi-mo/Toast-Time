@@ -49,7 +49,8 @@ func update(delta : float) -> void:
 	
 	if player.velocity.y >= 0 :
 		Transitioned.emit(self, "fall")
-	
+	if player.dead_flag:
+		Transitioned.emit(self, "dead")
 
 func physics_update(delta: float) -> void:
 	pass

@@ -11,6 +11,9 @@ func enter():
 	SoundManager.play_jake_punch()
 	
 func update(delta: float) -> void:
+	if player.dead_flag:
+		Transitioned.emit(self, "dead")
+	
 	if !anim_player.is_playing():
 		Transitioned.emit(self, "idle")
 	

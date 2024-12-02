@@ -4,8 +4,11 @@ extends Node2D
 @onready var pause_menu = $HUD/Pause
 var paused = false
 
-
+@onready var player = $Finn
 	
+
+func end_game():
+	print('dead')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,6 +30,6 @@ func _ready() -> void:
 	var player = $Finn
 	PlayerData.apply(player)
 	SoundManager.play_level2_music()
-	
+	player.connect('end_game', end_game)
 	hud.update_health(player.health_component.health, player.health_component.max_health)
 	

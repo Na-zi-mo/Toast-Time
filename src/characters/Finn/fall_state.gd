@@ -27,6 +27,9 @@ func update(delta : float) -> void:
 	
 	if player.is_on_floor() :
 		Transitioned.emit(self, "idle")
+		
+	if player.dead_flag:
+		Transitioned.emit(self, "dead")
 	
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor() :

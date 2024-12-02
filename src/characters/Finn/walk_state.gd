@@ -20,6 +20,9 @@ func update(delta : float) -> void:
 	
 	var dir := manage_input()
 	
+	if player.dead_flag:
+		Transitioned.emit(self, "dead")
+	
 	if player.hit_flag:
 		Transitioned.emit(self, "hit");
 	

@@ -42,6 +42,9 @@ func update(delta : float) -> void:
 		Transitioned.emit(self, "jump")
 	elif player.is_on_floor() and Input.is_action_just_pressed("attack"):
 		Transitioned.emit(self, "attack")
+	
+	if player.dead_flag:
+		Transitioned.emit(self, "dead")
 
 func physics_update(delta: float) -> void:
 	var dir := manage_input()

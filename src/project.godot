@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerData="*res://levels/player_data.gd"
 SoundManager="*res://sounds/sound_manager.tscn"
+Score="*res://HUD/Score.tscn"
 
 [display]
 

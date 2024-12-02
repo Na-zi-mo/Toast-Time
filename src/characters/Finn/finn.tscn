@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cfu8rj8dlv623"]
+[gd_scene load_steps=49 format=3 uid="uid://cfu8rj8dlv623"]
 
 [ext_resource type="Script" path="res://characters/Finn/player_fsm.gd" id="1_7qguk"]
 [ext_resource type="Texture2D" uid="uid://b5sfhldtc1ug1" path="res://characters/Finn/finn_jake_spritesheet.png" id="2_aq2f0"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://characters/Finn/run_state.gd" id="9_bisg8"]
 [ext_resource type="Script" path="res://characters/Finn/hit_state.gd" id="10_p2n0m"]
 [ext_resource type="Script" path="res://characters/Finn/secondary_attack_state.gd" id="11_ljnm4"]
+[ext_resource type="Script" path="res://characters/Finn/dead_state.gd" id="14_0bj5k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxclw"]
 radius = 18.0
@@ -1070,6 +1071,10 @@ player = NodePath("../..")
 
 [node name="SecondaryAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
 script = ExtResource("11_ljnm4")
+player = NodePath("../..")
+
+[node name="Dead" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("14_0bj5k")
 player = NodePath("../..")
 
 [node name="AttackZone" type="Area2D" parent="."]

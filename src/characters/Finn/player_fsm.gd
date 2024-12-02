@@ -16,6 +16,9 @@ var hp : int = 100
 var max_hp : int = 100
 var hp_increment : int = 2
 
+signal end_game
+
+@onready var dead_flag : bool = false
 
 const ACCEL = 75.0
 var accel = ACCEL
@@ -29,24 +32,10 @@ func _ready() -> void:
 	sprite = $Sprite2D	
 	anim_player.play("idle")
 	health_component = HealthClass.new(100)
-	#health_component.health = 100
-	#health_component.max_health = 100
-	
-	# to change health on health component call 
-	#take_damage(..)
-	#heal()
-	# then these signals with call health_changed that will call update_health in hud
-	
-	#add_child(life_timer)
-	#life_timer.wait_time = 1.0
-	#life_timer.autostart = true
-	#life_timer.timeout.connect(_on_life_timer_timeout)
-	#life_timer.start()
-	
-#func _on_life_timer_timeout() -> void :
-	#
-	#take_damage(10)
+	health_component.connect('died', dead)
 
+func dead():
+	dead_flag = true
 
 
 # Called every physics frame
@@ -59,15 +48,14 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 		attack_zone.position.x = -64
 	
+	if not dead_flag:
+		velocity = motion
 	
-	velocity = motion
+		motion.y += GRAVITY
 	
-	motion.y += GRAVITY
-	
-	if motion.y > MAXFALLSPEED:
-		motion.y = MAXFALLSPEED
-	
-	move_and_slide()
+		if motion.y > MAXFALLSPEED:
+			motion.y = MAXFALLSPEED
+		move_and_slide()
 	
 
 func apply_force(force : Vector2):

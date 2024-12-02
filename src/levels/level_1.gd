@@ -4,9 +4,14 @@ extends Node2D
 @onready var pause_menu = $HUD/Pause
 var paused = false
 
+@onready var player = $Finn
+
 func _ready() -> void:
-	#SoundManager
 	SoundManager.play_level1_music()
+	player.connect('end_game', end_game)
+
+func end_game():
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -12,6 +12,8 @@ func enter():
 	anim_player.play("spiral_swing_attack")
 	
 func update(delta: float) -> void:
+	if player.dead_flag:
+		Transitioned.emit(self, "dead")
 	
 	if !anim_player.is_playing():
 		if player.velocity.x != 0:

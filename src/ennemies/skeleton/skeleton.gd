@@ -9,8 +9,6 @@ extends GenericCharacter
 
 @onready var health_bar = $TextureProgressBar
 
-@onready var detection_area = $DetectAttack
-
 var detection_distance = 250
 
 func _ready() -> void:

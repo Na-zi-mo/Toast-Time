@@ -714,5 +714,17 @@ offset_right = 678.0
 offset_bottom = 220.0
 scale = Vector2(1.09325, 1.46954)
 
+[node name="DebugLabel" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 760.0
+offset_top = 4.0
+offset_right = 878.0
+offset_bottom = 38.0
+grow_horizontal = 0
+scale = Vector2(3.86041, 3.88667)
+
 [node name="Skeleton2" parent="." instance=ExtResource("6_hqsip")]
 position = Vector2(938, 656)

@@ -2,8 +2,14 @@ extends CanvasLayer
 class_name HUD
 
 
-var player : Player
-var health_bar : GenericProgressBar
+@onready var player : Player
+@onready var health_bar : GenericProgressBar
+
+@onready var debug_label = $DebugLabel
+
+@onready var debug_flag : bool = false
+
+var memory : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +20,20 @@ func _ready() -> void:
 	update_health(player.health_component.health, player.health_component.max_health)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta: float) -> void:
+	if debug_flag:
+		memory = Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576
+		var formated_memory = "%.3f" % memory
+		var player_x_position  = "%.1f" % player.global_position.x
+		var player_y_position  = "%.1f" % player.global_position.y
+		debug_label.text = "memory : " + str(formated_memory) + " mb" + "\nfps : " + str(Performance.get_monitor(Performance.TIME_FPS)) + " fps\n" + "player position : (" + str(player_x_position) + ", " + str(player_y_position) + ")" 
+
 	
 func update_health(value : int, max_value : int):
 	health_bar.update_value(value, max_value)
+
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("debug"):
+		debug_flag = !debug_flag
+		debug_label.visible = debug_flag

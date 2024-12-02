@@ -26,6 +26,13 @@ func update(delta: float) -> void:
 	if character.health_component.health <= 0:
 		character.get_animation_player().play("dying")
 		Transitioned.emit(self, "dead")
+		
+	var diff = (player.position - character.position).length()
+
+	
+	if ( diff >= character.detection_distance ):
+		character.get_animation_player().play("dying")
+		Transitioned.emit(self, "dead")
 
 func physics_update(delta: float) -> void:
 	character.motion.x = dir * ACCEL

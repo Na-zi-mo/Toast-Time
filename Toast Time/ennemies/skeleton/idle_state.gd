@@ -26,8 +26,8 @@ func update(delta : float) -> void :
 	
 	character.velocity.x = 0
 	
-	var diff := (player.position.x - character.position.x) as float
+	var diff = (player.position - character.position).length()
 	
-	if ( abs(diff) < 200 ):
+	if ( diff < character.detection_distance ):
 		character.is_alive = true
 		Transitioned.emit(self, "reviving")

@@ -11,6 +11,8 @@ extends GenericCharacter
 
 @onready var detection_area = $DetectAttack
 
+var detection_distance = 250
+
 func _ready() -> void:
 
 	anim_player = $AnimationPlayer

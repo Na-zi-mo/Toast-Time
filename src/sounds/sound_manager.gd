@@ -24,6 +24,15 @@ func play_level2_music():
 	stop_musics()
 	cave_music.play()
 
+func get_current_music():
+	if main_music.playing:
+		return main_music
+	elif cave_music.playing:
+		return cave_music
+	elif monstadt_music.playing:
+		return monstadt_music
+	return null 
+	
 
 func play_jake_punch():
 	jake_punch.play()

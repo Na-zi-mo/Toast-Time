@@ -5,7 +5,7 @@ extends Node2D
 var paused = false
 
 
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,6 +26,7 @@ func _ready() -> void:
 	var hud = $HUD
 	var player = $Finn
 	PlayerData.apply(player)
+	SoundManager.play_level2_music()
 	
 	hud.update_health(player.health_component.health, player.health_component.max_health)
 	

@@ -4,7 +4,9 @@ extends Node2D
 @onready var pause_menu = $HUD/Pause
 var paused = false
 
-
+func _ready() -> void:
+	#SoundManager
+	SoundManager.play_level1_music()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

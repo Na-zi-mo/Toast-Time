@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdx63chyerhh0"]
+
+[ext_resource type="Script" path="res://sounds/sound_manager.gd" id="1_a0hyp"]
+[ext_resource type="AudioStream" uid="uid://btvfw87cnrjh1" path="res://sounds/menu_music.wav" id="2_hk1gq"]
+[ext_resource type="AudioStream" uid="uid://dss6rw0fbqfmy" path="res://sounds/monstadt_level_music.wav" id="3_rwpkm"]
+[ext_resource type="AudioStream" uid="uid://jcqmoua44op7" path="res://sounds/cave_level_music.wav" id="4_dgbbe"]
+
+[node name="SoundManager" type="Node2D"]
+script = ExtResource("1_a0hyp")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hk1gq")
+
+[node name="MonstadtMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rwpkm")
+
+[node name="CaveMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dgbbe")

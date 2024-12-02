@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdx63chyerhh0"]
+[gd_scene load_steps=7 format=3 uid="uid://cdx63chyerhh0"]
 
 [ext_resource type="Script" path="res://sounds/sound_manager.gd" id="1_a0hyp"]
 [ext_resource type="AudioStream" uid="uid://btvfw87cnrjh1" path="res://sounds/menu_music.wav" id="2_hk1gq"]
 [ext_resource type="AudioStream" uid="uid://dss6rw0fbqfmy" path="res://sounds/monstadt_level_music.wav" id="3_rwpkm"]
 [ext_resource type="AudioStream" uid="uid://jcqmoua44op7" path="res://sounds/cave_level_music.wav" id="4_dgbbe"]
+[ext_resource type="AudioStream" uid="uid://bfqg5o1n8djiq" path="res://sounds/jake_punch.wav" id="5_l4arx"]
+[ext_resource type="AudioStream" uid="uid://b3i04pau530kw" path="res://sounds/jump.wav" id="6_r1ik2"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_a0hyp")
@@ -16,3 +18,9 @@ stream = ExtResource("3_rwpkm")
 
 [node name="CaveMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dgbbe")
+
+[node name="JakePunch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_l4arx")
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r1ik2")

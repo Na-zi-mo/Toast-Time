@@ -17,6 +17,7 @@ func manage_input() -> int:
 	return dir
 
 func enter():
+	SoundManager.play_jump()
 	#player.motion.y = -JUMPFORCE
 	#jump_height_timer.start()
 	anim_player = player.get_animation_player()

@@ -8,6 +8,7 @@ var anim_player : AnimationPlayer
 func enter():
 	anim_player = player.get_animation_player()
 	anim_player.play("jake_punch")
+	SoundManager.play_jake_punch()
 	
 func update(delta: float) -> void:
 	if !anim_player.is_playing():

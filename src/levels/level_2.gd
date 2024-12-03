@@ -31,9 +31,12 @@ func _process(delta: float) -> void:
 
 func pause_resume():
 	if paused:
+		get_tree().paused = false
 		pause_menu.hide()
 		Engine.time_scale = 1
 	else:
+		$HUD/Pause/VBoxContainer/Resume.grab_focus()
+		get_tree().paused = true
 		pause_menu.show()
 		Engine.time_scale = 0
 	paused = !paused

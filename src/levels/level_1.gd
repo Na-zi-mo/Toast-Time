@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 	manage_end_game()
 	if Input.is_action_just_pressed("pause"):
 		pause_resume()
+		
 
 func pause_resume():
 	if paused:

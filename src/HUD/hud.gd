@@ -10,6 +10,7 @@ class_name HUD
 @onready var debug_flag : bool = false
 
 var memory : float
+var video_memory : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,10 +24,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if debug_flag:
 		memory = Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576
-		var formated_memory = "%.3f" % memory
+		video_memory = Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / 1048576  
+		var formated_memory = "%.2f" % memory
+		var formated_video_memory = "%.2f" % video_memory
 		var player_x_position  = "%.1f" % player.global_position.x
 		var player_y_position  = "%.1f" % player.global_position.y
-		debug_label.text = "memory : " + str(formated_memory) + " mb" + "\nfps : " + str(Performance.get_monitor(Performance.TIME_FPS)) + " fps\n" + "player position : (" + str(player_x_position) + ", " + str(player_y_position) + ")\n player health : " + str(player.health_component.health) + "/" + str(player.health_component.max_health) 
+		debug_label.text = "memory : " + str(formated_memory) + " mb/s" + "\nvideo memory : " + str(formated_video_memory) + "mb/s" + "\nfps : " + str(Performance.get_monitor(Performance.TIME_FPS)) + " fps" + "\nplayer position : (" + str(player_x_position) + ", " + str(player_y_position) + ")\n player health : " + str(player.health_component.health) + "/" + str(player.health_component.max_health) 
 
 	
 func update_health(value : int, max_value : int):

@@ -723,9 +723,9 @@ visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 760.0
+offset_left = 572.0
 offset_top = 4.0
-offset_right = 878.0
+offset_right = 690.0
 offset_bottom = 38.0
 grow_horizontal = 0
 scale = Vector2(3.86041, 3.88667)
@@ -741,7 +741,6 @@ texture = ExtResource("11_g4end")
 [node name="Area2D" type="Area2D" parent="MagicToast"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MagicToast/Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_805g0")
 
 [connection signal="body_entered" from="MagicToast/Area2D" to="." method="_on_toast_entered"]

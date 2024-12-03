@@ -19,5 +19,6 @@ func _process(delta: float) -> void:
 	manage_end_game()
 
 func _on_menu_pressed() -> void:
+	SoundManager.stop_musics()
 	SoundManager.play_click()
 	get_tree().change_scene_to_file("res://HUD/menu.tscn")

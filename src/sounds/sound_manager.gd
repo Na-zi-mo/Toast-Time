@@ -7,6 +7,7 @@ extends Node
 @onready var jump = $Jump
 @onready var click = $Click
 @onready var game_over = $GameOver
+@onready var game_won = $GameWon
 
 @onready var muted : bool = false
 @onready var last_sound_value_db
@@ -27,6 +28,8 @@ func stop_musics():
 	cave_music.stop()
 	main_music.stop()
 	monstadt_music.stop()
+	game_over.stop()
+	game_won.stop()
 
 func play_menu_music():
 	stop_musics()
@@ -55,6 +58,9 @@ func play_jake_punch():
 
 func play_game_over():
 	game_over.play()
+	
+func play_game_won():
+	game_won.play()
 		
 func play_jump():
 	jump.play()

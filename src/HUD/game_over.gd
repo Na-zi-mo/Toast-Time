@@ -24,10 +24,12 @@ func _ready() -> void:
 
 func _on_restart_pressed() -> void:
 	SoundManager.play_click()
+	SoundManager.stop_musics()
 	get_tree().change_scene_to_file("res://levels/level_1.tscn")
 
 func _on_menu_pressed() -> void:
 	SoundManager.play_click()
+	SoundManager.stop_musics()
 	get_tree().change_scene_to_file("res://HUD/menu.tscn")
 
 func _on_quit_pressed() -> void:

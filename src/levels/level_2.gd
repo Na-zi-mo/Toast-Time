@@ -53,4 +53,6 @@ func _ready() -> void:
 func _on_toast_entered(body: Node2D) -> void:
 	if body.is_in_group('Player'):
 		toast.hide()
+		SoundManager.stop_musics()
+		SoundManager.play_game_won()
 		get_tree().change_scene_to_file("res://HUD/game_won.tscn")

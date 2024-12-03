@@ -3,6 +3,9 @@ extends Control
 
 @onready var world = $"../../"
 
+func _ready() -> void:
+	$VBoxContainer/Resume.grab_focus()
+
 func is_on_arcade() -> bool:
 	return OS.get_executable_path().to_lower().contains("retropie")
 

@@ -1,6 +1,9 @@
 extends Control
 
 
+func _ready() -> void:
+	$VBoxContainer/Menu.grab_focus()
+
 func is_on_arcade() -> bool:
 	return OS.get_executable_path().to_lower().contains("retropie")
 

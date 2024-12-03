@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func is_on_arcade() -> bool:
 	return OS.get_executable_path().to_lower().contains("retropie")
 
@@ -16,6 +17,7 @@ func _process(delta: float) -> void:
 	manage_end_game()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$VBoxContainer/Restart.grab_focus()
 	SoundManager.stop_musics()
 	SoundManager.play_game_over()
 

@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	manage_end_game()
 
 func _ready() -> void:
+	$VBoxContainer/Start.grab_focus()
 	if not SoundManager.main_music.playing :
 		SoundManager.play_menu_music()
 

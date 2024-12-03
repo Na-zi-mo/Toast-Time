@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		var formated_video_memory = "%.2f" % video_memory
 		var player_x_position  = "%.1f" % player.global_position.x
 		var player_y_position  = "%.1f" % player.global_position.y
-		debug_label.text = "memory : " + str(formated_memory) + " mb/s" + "\nvideo memory : " + str(formated_video_memory) + "mb/s" + "\nfps : " + str(Performance.get_monitor(Performance.TIME_FPS)) + " fps" + "\nplayer position : (" + str(player_x_position) + ", " + str(player_y_position) + ")\n player health : " + str(player.health_component.health) + "/" + str(player.health_component.max_health) 
+		debug_label.text = "memory : " + str(formated_memory) + " MB/s" + "\nvideo memory : " + str(formated_video_memory) + "MB/s" + "\nfps : " + str(Performance.get_monitor(Performance.TIME_FPS)) + " fps" + "\nplayer position : (" + str(player_x_position) + ", " + str(player_y_position) + ")\n player health : " + str(player.health_component.health) + "/" + str(player.health_component.max_health) 
 
 	
 func update_health(value : int, max_value : int):

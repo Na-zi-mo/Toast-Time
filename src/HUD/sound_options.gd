@@ -5,6 +5,8 @@ extends Control
 @onready var sfx_slider : HSlider = $VBoxContainer/SfxSlider
 
 func _ready() -> void:
+	$VBoxContainer/MasterSlider.grab_focus()
+	
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
 	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))

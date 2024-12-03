@@ -1483,7 +1483,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_2gtse")
 
 [node name="Level1" type="Node2D"]
-process_mode = 1
+process_mode = 3
 position = Vector2(-65, 226)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_6mqvn")
@@ -1527,6 +1527,7 @@ transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 script = ExtResource("8_2cmod")
 
 [node name="Pause" parent="HUD" instance=ExtResource("9_nnbce")]
+process_mode = 3
 visible = false
 anchors_preset = 8
 anchor_left = 0.5

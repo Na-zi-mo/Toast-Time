@@ -1527,7 +1527,6 @@ transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 script = ExtResource("8_2cmod")
 
 [node name="Pause" parent="HUD" instance=ExtResource("9_nnbce")]
-process_mode = 3
 visible = false
 anchors_preset = 8
 anchor_left = 0.5

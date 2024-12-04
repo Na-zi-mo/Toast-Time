@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qfiraamqlb8e" path="res://HUD/toast_time.png" id="2_mdeav"]
 
 [node name="Options" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

@@ -47,3 +47,15 @@ func _on_master_slider_drag_ended(value_changed: bool) -> void:
 func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
 	var value = sfx_slider.value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
+
+
+func _on_master_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db( master_slider.value))
+
+
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db( music_slider.value))
+
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db( sfx_slider.value))

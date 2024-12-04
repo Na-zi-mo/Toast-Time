@@ -7,6 +7,7 @@
 bg_color = Color(0.306923, 0.306923, 0.306923, 1)
 
 [node name="InstructionsMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,6 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_4i7du")
 bbcode_enabled = true

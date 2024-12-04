@@ -42,12 +42,56 @@ On peut également ajouter un **spacing** entre chaque **sprite** si l'on veut.
 
 ### Comportement du Skeleton
 
+Un autre concept exploré est le comportement des ennemis, notamment celui du **Skeleton**. .
 
+L'état **IdleState** est un état où le **Skeleton** reste immobile tout en surveillant la position du joueur. Ce comportement repose sur les éléments suivants :
+
+- **Temps d'inactivité** : Une durée de 3 secondes pendant laquelle le **Skeleton** reste inactif.
+
+- **Direction suivante** : Calculée pour savoir si le **Skeleton** changera de direction après l'état d'inactivité.
+
+- **Détection du joueur** : Si le joueur est à portée (moins de 250 pixels), le **Skeleton** se déclenche et se régénère.
 
 
 > source: inspiré en partie du golem dans le project [c09_platformer_raycast](https://github.com/nbourre/0sw_projets_cours/tree/master/c09_platformer_raycast)
 
 ![Skeleton Animation](doc/Animation.gif)
+
+```
+class_name IdleState_Skeleton
+extends BaseState
+
+@export var character : GenericCharacter
+
+var idle_time : float
+var next_dir : bool
+
+var player
+
+func get_player() -> CharacterBody2D:
+	return get_parent().get_parent().get_parent().get_node("Finn") as CharacterBody2D
+
+func enter() -> void:
+	if character.get_animation_player() != null:
+		character.get_animation_player().play("dead")
+
+	player = get_player()
+	idle_time = randf_range(1, 3)
+	next_dir = randi_range(0, 1) == 1
+
+func update(delta : float) -> void :
+	if (player == null) :
+		player = get_player()
+		return
+	
+	character.velocity.x = 0
+	
+	var diff = (player.position - character.position).length()
+	
+	if ( diff < character.detection_distance ):
+		character.is_alive = true
+		Transitioned.emit(self, "reviving")
+```
 
 ## Bibliographie
 
